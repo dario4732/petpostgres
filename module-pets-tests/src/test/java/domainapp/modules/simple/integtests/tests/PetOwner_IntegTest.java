@@ -12,7 +12,7 @@ import org.apache.isis.applib.services.wrapper.DisabledException;
 import org.apache.isis.applib.services.wrapper.InvalidException;
 
 import domainapp.modules.simple.dom.so.PetOwner;
-import domainapp.modules.simple.fixture.SimpleObject_persona;
+import domainapp.modules.simple.fixture.PetOwner_persona;
 import domainapp.modules.simple.integtests.SimpleModuleIntegTestAbstract;
 
 @Transactional
@@ -23,7 +23,7 @@ public class PetOwner_IntegTest extends SimpleModuleIntegTestAbstract {
     @BeforeEach
     public void setUp() {
         // given
-        petOwner = fixtureScripts.runPersona(SimpleObject_persona.FOO);
+        petOwner = fixtureScripts.runPersona(PetOwner_persona.FOO);
     }
 
 

@@ -11,7 +11,7 @@ import domainapp.modules.simple.dom.so.PetOwners;
 import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
-public enum SimpleObject_persona
+public enum PetOwner_persona
 implements PersonaWithBuilderScript<SimpleObjectBuilder>, PersonaWithFinder<PetOwner> {
 
     FOO("Foo"),
@@ -39,10 +39,10 @@ implements PersonaWithBuilderScript<SimpleObjectBuilder>, PersonaWithFinder<PetO
     }
 
     public static class PersistAll
-    extends PersonaEnumPersistAll<SimpleObject_persona, PetOwner> {
+    extends PersonaEnumPersistAll<PetOwner_persona, PetOwner> {
 
         public PersistAll() {
-            super(SimpleObject_persona.class);
+            super(PetOwner_persona.class);
         }
     }
 }
