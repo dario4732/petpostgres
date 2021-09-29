@@ -50,7 +50,7 @@ import domainapp.modules.simple.types.Notes;
         )
 })
 @javax.persistence.EntityListeners(IsisEntityListener.class)
-@DomainObject(logicalTypeName = "simple.PetOwner", entityChangePublishing = Publishing.ENABLED)
+@DomainObject(logicalTypeName = "pets.PetOwner", entityChangePublishing = Publishing.ENABLED)
 @DomainObjectLayout()
 @NoArgsConstructor(access = AccessLevel.PUBLIC)
 @XmlJavaTypeAdapter(PersistentEntityAdapter.class)
