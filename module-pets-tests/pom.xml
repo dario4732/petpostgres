@@ -14,7 +14,7 @@
     <name>Petclinic - Pets Module (tests)</name>
 
     <description>
-        Integ tests for 'simple module'
+        Integ tests for 'pets' module
     </description>
 
     <build>
