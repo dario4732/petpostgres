@@ -177,7 +177,7 @@
                                 </ports>
                             </container>
                             <to>
-                                <image>docker.io/apacheisis/simpleapp</image>
+                                <image>docker.io/apacheisis/petclinic</image>
                                 <tags>
                                     <tag>${env.REVISION}</tag>
                                 </tags>
