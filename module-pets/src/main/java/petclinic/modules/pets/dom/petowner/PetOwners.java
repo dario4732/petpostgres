@@ -2,6 +2,7 @@ package petclinic.modules.pets.dom.petowner;
 
 import java.util.List;
 
+import javax.annotation.Priority;
 import javax.inject.Inject;
 import javax.persistence.TypedQuery;
 
@@ -18,14 +19,16 @@ import org.apache.isis.applib.query.Query;
 import org.apache.isis.applib.services.repository.RepositoryService;
 import org.apache.isis.persistence.jpa.applib.services.JpaSupportService;
 
+import lombok.RequiredArgsConstructor;
+
 import petclinic.modules.pets.types.Name;
 
 @DomainService(
         nature = NatureOfService.VIEW,
         logicalTypeName = "pets.PetOwners"
 )
-@javax.annotation.Priority(PriorityPrecedence.EARLY)
-@lombok.RequiredArgsConstructor(onConstructor_ = {@Inject} )
+@Priority(PriorityPrecedence.EARLY)
+@RequiredArgsConstructor(onConstructor_ = {@Inject} )
 public class PetOwners {
 
     final RepositoryService repositoryService;
