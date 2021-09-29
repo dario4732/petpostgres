@@ -1,4 +1,4 @@
-package domainapp.webapp.integtests;
+package petclinic.webapp.integtests;
 
 import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;

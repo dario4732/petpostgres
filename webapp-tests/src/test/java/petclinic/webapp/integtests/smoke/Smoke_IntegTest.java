@@ -1,4 +1,4 @@
-package domainapp.webapp.integtests.smoke;
+package petclinic.webapp.integtests.smoke;
 
 import java.util.List;
 
@@ -14,7 +14,7 @@ import org.apache.isis.applib.services.xactn.TransactionService;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import petclinic.modules.pets.dom.petowner.PetOwner;
-import domainapp.webapp.integtests.WebAppIntegTestAbstract;
+import petclinic.webapp.integtests.WebAppIntegTestAbstract;
 import petclinic.modules.pets.dom.petowner.PetOwners;
 
 @Transactional
