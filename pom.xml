@@ -67,8 +67,8 @@
     </dependencies>
 
     <modules>
-        <module>module-simple</module>
-        <module>module-simple-tests</module>
+        <module>module-pets</module>
+        <module>module-pets-tests</module>
         <module>webapp</module>
         <module>webapp-tests</module>
     </modules>
