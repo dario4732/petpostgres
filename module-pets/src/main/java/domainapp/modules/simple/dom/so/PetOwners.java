@@ -30,7 +30,7 @@ public class PetOwners {
 
     final RepositoryService repositoryService;
     final JpaSupportService jpaSupportService;
-    final SimpleObjectRepository simpleObjectRepository;
+    final PetOwnerRepository petOwnerRepository;
 
 
     @Action(semantics = SemanticsOf.NON_IDEMPOTENT)
@@ -56,13 +56,13 @@ public class PetOwners {
     public List<PetOwner> findByName(
             @Name final String name
             ) {
-        return simpleObjectRepository.findByNameContaining(name);
+        return petOwnerRepository.findByNameContaining(name);
     }
 
 
     @Programmatic
     public PetOwner findByNameExact(final String name) {
-        return simpleObjectRepository.findByName(name);
+        return petOwnerRepository.findByName(name);
     }
 
 
@@ -70,7 +70,7 @@ public class PetOwners {
     @Action(semantics = SemanticsOf.SAFE)
     @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT)
     public List<PetOwner> listAll() {
-        return simpleObjectRepository.findAll();
+        return petOwnerRepository.findAll();
     }
 
 

@@ -25,13 +25,13 @@ class PetOwners_Test {
 
     @Mock RepositoryService mockRepositoryService;
     @Mock JpaSupportService mockJpaSupportService;
-    @Mock SimpleObjectRepository mockSimpleObjectRepository;
+    @Mock PetOwnerRepository mockPetOwnerRepository;
 
     PetOwners objects;
 
     @BeforeEach
     public void setUp() {
-        objects = new PetOwners(mockRepositoryService, mockJpaSupportService, mockSimpleObjectRepository);
+        objects = new PetOwners(mockRepositoryService, mockJpaSupportService, mockPetOwnerRepository);
     }
 
     @Nested
@@ -67,7 +67,7 @@ class PetOwners_Test {
             final List<PetOwner> all = new ArrayList<>();
 
             // expecting
-            when(mockSimpleObjectRepository.findAll())
+            when(mockPetOwnerRepository.findAll())
                 .thenReturn(all);
 
             // when
