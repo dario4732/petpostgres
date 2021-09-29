@@ -9,7 +9,7 @@
     </parent>
 
     <artifactId>petclinic-webapp</artifactId>
-    <name>SimpleApp (JPA) - Webapp</name>
+    <name>Petclinic - Webapp</name>
 
     <description>
     	Assembles and runs both the Wicket viewer and the Restfulobjects viewer

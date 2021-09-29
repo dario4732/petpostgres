@@ -9,7 +9,7 @@
     </parent>
 
     <artifactId>petclinic-webapp-tests</artifactId>
-    <name>SimpleApp (JPA) - Webapp (tests)</name>
+    <name>Petclinic - Webapp (tests)</name>
 
     <description>
         Integ tests for entire app.
