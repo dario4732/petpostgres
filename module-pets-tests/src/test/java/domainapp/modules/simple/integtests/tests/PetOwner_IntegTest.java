@@ -13,10 +13,10 @@ import org.apache.isis.applib.services.wrapper.InvalidException;
 
 import domainapp.modules.simple.dom.so.PetOwner;
 import domainapp.modules.simple.fixture.PetOwner_persona;
-import domainapp.modules.simple.integtests.SimpleModuleIntegTestAbstract;
+import domainapp.modules.simple.integtests.PetsModuleIntegTestAbstract;
 
 @Transactional
-public class PetOwner_IntegTest extends SimpleModuleIntegTestAbstract {
+public class PetOwner_IntegTest extends PetsModuleIntegTestAbstract {
 
     PetOwner petOwner;
 

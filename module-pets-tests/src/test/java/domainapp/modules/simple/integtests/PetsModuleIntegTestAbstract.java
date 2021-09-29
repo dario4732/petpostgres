@@ -19,10 +19,10 @@ import domainapp.modules.simple.PetsModule;
 
 
 @SpringBootTest(
-        classes = SimpleModuleIntegTestAbstract.TestApp.class
+        classes = PetsModuleIntegTestAbstract.TestApp.class
 )
 @ActiveProfiles("test")
-public abstract class SimpleModuleIntegTestAbstract extends IsisIntegrationTestAbstractWithFixtures {
+public abstract class PetsModuleIntegTestAbstract extends IsisIntegrationTestAbstractWithFixtures {
 
     /**
      * Compared to the production app manifest <code>domainapp.webapp.AppManifest</code>,

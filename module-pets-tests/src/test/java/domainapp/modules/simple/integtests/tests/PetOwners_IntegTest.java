@@ -18,10 +18,10 @@ import org.apache.isis.testing.unittestsupport.applib.matchers.ThrowableMatchers
 import domainapp.modules.simple.dom.so.PetOwner;
 import domainapp.modules.simple.dom.so.PetOwners;
 import domainapp.modules.simple.fixture.PetOwner_persona;
-import domainapp.modules.simple.integtests.SimpleModuleIntegTestAbstract;
+import domainapp.modules.simple.integtests.PetsModuleIntegTestAbstract;
 
 @Transactional
-public class PetOwners_IntegTest extends SimpleModuleIntegTestAbstract {
+public class PetOwners_IntegTest extends PetsModuleIntegTestAbstract {
 
     @Inject
     PetOwners menu;
