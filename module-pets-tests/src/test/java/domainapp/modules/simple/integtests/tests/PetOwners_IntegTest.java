@@ -16,18 +16,18 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import org.apache.isis.testing.unittestsupport.applib.matchers.ThrowableMatchers;
 
 import domainapp.modules.simple.dom.so.PetOwner;
-import domainapp.modules.simple.dom.so.SimpleObjects;
+import domainapp.modules.simple.dom.so.PetOwners;
 import domainapp.modules.simple.fixture.SimpleObject_persona;
 import domainapp.modules.simple.integtests.SimpleModuleIntegTestAbstract;
 
 @Transactional
-public class SimpleObjects_IntegTest extends SimpleModuleIntegTestAbstract {
+public class PetOwners_IntegTest extends SimpleModuleIntegTestAbstract {
 
     @Inject
-    SimpleObjects menu;
+    PetOwners menu;
 
     @Nested
-    public static class listAll extends SimpleObjects_IntegTest {
+    public static class listAll extends PetOwners_IntegTest {
 
         @Test
         public void happyCase() {
@@ -55,7 +55,7 @@ public class SimpleObjects_IntegTest extends SimpleModuleIntegTestAbstract {
     }
 
     @Nested
-    public static class create extends SimpleObjects_IntegTest {
+    public static class create extends PetOwners_IntegTest {
 
         @Test
         public void happyCase() {

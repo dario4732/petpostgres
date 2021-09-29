@@ -15,12 +15,12 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import domainapp.modules.simple.dom.so.PetOwner;
 import domainapp.webapp.integtests.WebAppIntegTestAbstract;
-import domainapp.modules.simple.dom.so.SimpleObjects;
+import domainapp.modules.simple.dom.so.PetOwners;
 
 @Transactional
 class Smoke_IntegTest extends WebAppIntegTestAbstract {
 
-    @Inject SimpleObjects menu;
+    @Inject PetOwners menu;
     @Inject TransactionService transactionService;
 
     @Test

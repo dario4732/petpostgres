@@ -18,7 +18,7 @@ import org.apache.isis.applib.services.xactn.TransactionalProcessor;
 import lombok.RequiredArgsConstructor;
 
 import domainapp.modules.simple.dom.so.PetOwner;
-import domainapp.modules.simple.dom.so.SimpleObjects;
+import domainapp.modules.simple.dom.so.PetOwners;
 
 @RestController
 @RequiredArgsConstructor(onConstructor_ = {@Inject})
@@ -26,11 +26,11 @@ class CustomController {
 
     private final InteractionService interactionService;
     private final TransactionalProcessor transactionalProcessor;
-    private final SimpleObjects simpleObjects;
+    private final PetOwners petOwners;
 
     @GetMapping("/custom/simpleObjects")
     List<PetOwner> all() {
-        return call("sven", simpleObjects::listAll)
+        return call("sven", petOwners::listAll)
                 .orElse(Collections.<PetOwner>emptyList());
     }
 

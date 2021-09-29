@@ -21,7 +21,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 
 import domainapp.modules.simple.dom.so.PetOwner;
-import domainapp.modules.simple.dom.so.SimpleObjects;
+import domainapp.modules.simple.dom.so.PetOwners;
 
 @Component
 @RequiredArgsConstructor(onConstructor_ = {@Inject})
@@ -30,7 +30,7 @@ public class SampleJob implements Job {
 
     private final InteractionService interactionService;
     private final TransactionalProcessor transactionalProcessor;
-    private final SimpleObjects simpleObjects;
+    private final PetOwners petOwners;
 
     @Override
     public void execute(JobExecutionContext context) throws JobExecutionException {
@@ -39,7 +39,7 @@ public class SampleJob implements Job {
     }
 
     List<PetOwner> all() {
-        return call("sven", simpleObjects::listAll)
+        return call("sven", petOwners::listAll)
                 .orElse(Collections.<PetOwner>emptyList());
     }
 

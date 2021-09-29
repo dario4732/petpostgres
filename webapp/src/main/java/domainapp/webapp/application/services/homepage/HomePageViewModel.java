@@ -10,7 +10,7 @@ import org.apache.isis.applib.annotation.HomePage;
 import org.apache.isis.applib.annotation.Nature;
 
 import domainapp.modules.simple.dom.so.PetOwner;
-import domainapp.modules.simple.dom.so.SimpleObjects;
+import domainapp.modules.simple.dom.so.PetOwners;
 
 @DomainObject(
         nature = Nature.VIEW_MODEL,
@@ -25,8 +25,8 @@ public class HomePageViewModel {
     }
 
     public List<PetOwner> getObjects() {
-        return simpleObjects.listAll();
+        return petOwners.listAll();
     }
 
-    @Inject SimpleObjects simpleObjects;
+    @Inject PetOwners petOwners;
 }

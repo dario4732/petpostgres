@@ -21,17 +21,17 @@ import org.apache.isis.applib.services.repository.RepositoryService;
 import org.apache.isis.persistence.jpa.applib.services.JpaSupportService;
 
 @ExtendWith(MockitoExtension.class)
-class SimpleObjects_Test {
+class PetOwners_Test {
 
     @Mock RepositoryService mockRepositoryService;
     @Mock JpaSupportService mockJpaSupportService;
     @Mock SimpleObjectRepository mockSimpleObjectRepository;
 
-    SimpleObjects objects;
+    PetOwners objects;
 
     @BeforeEach
     public void setUp() {
-        objects = new SimpleObjects(mockRepositoryService, mockJpaSupportService, mockSimpleObjectRepository);
+        objects = new PetOwners(mockRepositoryService, mockJpaSupportService, mockSimpleObjectRepository);
     }
 
     @Nested

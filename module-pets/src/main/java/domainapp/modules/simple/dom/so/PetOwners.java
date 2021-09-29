@@ -22,11 +22,11 @@ import domainapp.modules.simple.types.Name;
 
 @DomainService(
         nature = NatureOfService.VIEW,
-        logicalTypeName = "simple.SimpleObjects"
+        logicalTypeName = "simple.PetOwners"
 )
 @javax.annotation.Priority(PriorityPrecedence.EARLY)
 @lombok.RequiredArgsConstructor(onConstructor_ = {@Inject} )
-public class SimpleObjects {
+public class PetOwners {
 
     final RepositoryService repositoryService;
     final JpaSupportService jpaSupportService;

@@ -6,7 +6,8 @@ import org.apache.isis.testing.fixtures.applib.personas.PersonaWithFinder;
 import org.apache.isis.testing.fixtures.applib.setup.PersonaEnumPersistAll;
 
 import domainapp.modules.simple.dom.so.PetOwner;
-import domainapp.modules.simple.dom.so.SimpleObjects;
+import domainapp.modules.simple.dom.so.PetOwners;
+
 import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
@@ -33,8 +34,8 @@ implements PersonaWithBuilderScript<SimpleObjectBuilder>, PersonaWithFinder<PetO
 
     @Override
     public PetOwner findUsing(final ServiceRegistry serviceRegistry) {
-        SimpleObjects simpleObjects = serviceRegistry.lookupService(SimpleObjects.class).orElse(null);
-        return simpleObjects.findByNameExact(name);
+        PetOwners petOwners = serviceRegistry.lookupService(PetOwners.class).orElse(null);
+        return petOwners.findByNameExact(name);
     }
 
     public static class PersistAll
