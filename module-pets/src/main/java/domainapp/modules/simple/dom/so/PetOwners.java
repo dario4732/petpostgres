@@ -22,7 +22,7 @@ import domainapp.modules.simple.types.Name;
 
 @DomainService(
         nature = NatureOfService.VIEW,
-        logicalTypeName = "simple.PetOwners"
+        logicalTypeName = "pets.PetOwners"
 )
 @javax.annotation.Priority(PriorityPrecedence.EARLY)
 @lombok.RequiredArgsConstructor(onConstructor_ = {@Inject} )
