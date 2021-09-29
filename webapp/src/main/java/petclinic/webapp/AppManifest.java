@@ -16,7 +16,7 @@ import org.apache.isis.viewer.restfulobjects.jaxrsresteasy4.IsisModuleViewerRest
 import org.apache.isis.viewer.wicket.viewer.IsisModuleViewerWicketViewer;
 
 import petclinic.webapp.application.ApplicationModule;
-import petclinic.webapp.application.fixture.scenarios.DomainAppDemo;
+import petclinic.webapp.application.fixture.scenarios.PetClinicDemo;
 import petclinic.webapp.custom.CustomModule;
 import petclinic.webapp.quartz.QuartzModule;
 
@@ -38,7 +38,7 @@ import petclinic.webapp.quartz.QuartzModule;
         QuartzModule.class,
 
         // discoverable fixtures
-        DomainAppDemo.class
+        PetClinicDemo.class
 })
 @PropertySources({
         @PropertySource(IsisPresets.DebugDiscovery),

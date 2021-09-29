@@ -7,7 +7,7 @@ import org.apache.isis.testing.fixtures.applib.modules.ModuleWithFixturesService
 
 import petclinic.modules.pets.fixture.PetOwner_persona;
 
-public class DomainAppDemo extends FixtureScript {
+public class PetClinicDemo extends FixtureScript {
 
     @Override
     protected void execute(final ExecutionContext ec) {
