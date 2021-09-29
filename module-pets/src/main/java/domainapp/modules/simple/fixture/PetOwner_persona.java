@@ -12,7 +12,7 @@ import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
 public enum PetOwner_persona
-implements PersonaWithBuilderScript<SimpleObjectBuilder>, PersonaWithFinder<PetOwner> {
+implements PersonaWithBuilderScript<PetOwnerBuilder>, PersonaWithFinder<PetOwner> {
 
     FOO("Foo"),
     BAR("Bar"),
@@ -28,8 +28,8 @@ implements PersonaWithBuilderScript<SimpleObjectBuilder>, PersonaWithFinder<PetO
     private final String name;
 
     @Override
-    public SimpleObjectBuilder builder() {
-        return new SimpleObjectBuilder().setName(name);
+    public PetOwnerBuilder builder() {
+        return new PetOwnerBuilder().setName(name);
     }
 
     @Override

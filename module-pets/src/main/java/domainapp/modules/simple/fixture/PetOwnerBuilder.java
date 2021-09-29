@@ -12,7 +12,7 @@ import lombok.Setter;
 import lombok.experimental.Accessors;
 
 @Accessors(chain = true)
-public class SimpleObjectBuilder extends BuilderScriptWithResult<PetOwner> {
+public class PetOwnerBuilder extends BuilderScriptWithResult<PetOwner> {
 
     @Getter @Setter
     private String name;
