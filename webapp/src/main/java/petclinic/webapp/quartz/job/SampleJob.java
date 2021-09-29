@@ -1,4 +1,4 @@
-package domainapp.webapp.quartz.job;
+package petclinic.webapp.quartz.job;
 
 import java.util.Collections;
 import java.util.List;

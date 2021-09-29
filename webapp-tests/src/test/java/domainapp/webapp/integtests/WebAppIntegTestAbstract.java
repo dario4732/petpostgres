@@ -17,7 +17,7 @@ import org.apache.isis.testing.fixtures.applib.IsisModuleTestingFixturesApplib;
 import org.apache.isis.testing.integtestsupport.applib.IsisIntegrationTestAbstract;
 
 import petclinic.modules.pets.PetsModule;
-import domainapp.webapp.application.ApplicationModule;
+import petclinic.webapp.application.ApplicationModule;
 
 @SpringBootTest(
     classes = {
@@ -30,7 +30,7 @@ import domainapp.webapp.application.ApplicationModule;
 public abstract class WebAppIntegTestAbstract extends IsisIntegrationTestAbstract {
 
     /**
-     * Compared to the production app manifest <code>domainapp.webapp.AppManifest</code>,
+     * Compared to the production app manifest <code>petclinic.webapp.AppManifest</code>,
      * here we in effect disable security checks, and we exclude any web/UI modules.
      */
     @SpringBootConfiguration

@@ -1,4 +1,4 @@
-package domainapp.webapp.custom.restapi;
+package petclinic.webapp.custom.restapi;
 
 import java.util.Collections;
 import java.util.List;

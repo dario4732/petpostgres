@@ -1,4 +1,4 @@
-package domainapp.webapp.quartz;
+package petclinic.webapp.quartz;
 
 import org.quartz.JobDetail;
 import org.quartz.SimpleTrigger;
@@ -10,7 +10,7 @@ import org.springframework.scheduling.quartz.SimpleTriggerFactoryBean;
 
 import lombok.val;
 
-import domainapp.webapp.quartz.job.SampleJob;
+import petclinic.webapp.quartz.job.SampleJob;
 
 @Configuration
 @ComponentScan

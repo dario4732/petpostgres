@@ -1,4 +1,4 @@
-package domainapp.webapp;
+package petclinic.webapp;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
@@ -15,10 +15,10 @@ import org.apache.isis.testing.h2console.ui.IsisModuleTestingH2ConsoleUi;
 import org.apache.isis.viewer.restfulobjects.jaxrsresteasy4.IsisModuleViewerRestfulObjectsJaxrsResteasy4;
 import org.apache.isis.viewer.wicket.viewer.IsisModuleViewerWicketViewer;
 
-import domainapp.webapp.application.ApplicationModule;
-import domainapp.webapp.application.fixture.scenarios.DomainAppDemo;
-import domainapp.webapp.custom.CustomModule;
-import domainapp.webapp.quartz.QuartzModule;
+import petclinic.webapp.application.ApplicationModule;
+import petclinic.webapp.application.fixture.scenarios.DomainAppDemo;
+import petclinic.webapp.custom.CustomModule;
+import petclinic.webapp.quartz.QuartzModule;
 
 @Configuration
 @Import({

@@ -1,4 +1,4 @@
-package domainapp.webapp.application.services.health;
+package petclinic.webapp.application.services.health;
 
 import javax.inject.Inject;
 import javax.inject.Named;

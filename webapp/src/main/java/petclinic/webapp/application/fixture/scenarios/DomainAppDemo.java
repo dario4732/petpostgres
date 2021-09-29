@@ -1,4 +1,4 @@
-package domainapp.webapp.application.fixture.scenarios;
+package petclinic.webapp.application.fixture.scenarios;
 
 import javax.inject.Inject;
 

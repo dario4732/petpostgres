@@ -1,4 +1,4 @@
-package domainapp.webapp.application.services.homepage;
+package petclinic.webapp.application.services.homepage;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package domainapp.webapp.custom;
+package petclinic.webapp.custom;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
