@@ -20,7 +20,7 @@ import org.apache.isis.applib.services.xactn.TransactionalProcessor;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 
-import domainapp.modules.simple.dom.so.SimpleObject;
+import domainapp.modules.simple.dom.so.PetOwner;
 import domainapp.modules.simple.dom.so.SimpleObjects;
 
 @Component
@@ -34,13 +34,13 @@ public class SampleJob implements Job {
 
     @Override
     public void execute(JobExecutionContext context) throws JobExecutionException {
-        final List<SimpleObject> all = all();
+        final List<PetOwner> all = all();
         log.info("{} objects in the database", all.size());
     }
 
-    List<SimpleObject> all() {
+    List<PetOwner> all() {
         return call("sven", simpleObjects::listAll)
-                .orElse(Collections.<SimpleObject>emptyList());
+                .orElse(Collections.<PetOwner>emptyList());
     }
 
     private <T> Optional<T> call(

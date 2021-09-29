@@ -43,21 +43,21 @@ import domainapp.modules.simple.types.Notes;
 )
 @javax.persistence.NamedQueries({
         @javax.persistence.NamedQuery(
-                name = SimpleObject.NAMED_QUERY__FIND_BY_NAME_LIKE,
+                name = PetOwner.NAMED_QUERY__FIND_BY_NAME_LIKE,
                 query = "SELECT so " +
-                        "FROM SimpleObject so " +
+                        "FROM PetOwner so " +
                         "WHERE so.name LIKE :name"
         )
 })
 @javax.persistence.EntityListeners(IsisEntityListener.class)
-@DomainObject(logicalTypeName = "simple.SimpleObject", entityChangePublishing = Publishing.ENABLED)
+@DomainObject(logicalTypeName = "simple.PetOwner", entityChangePublishing = Publishing.ENABLED)
 @DomainObjectLayout()
 @NoArgsConstructor(access = AccessLevel.PUBLIC)
 @XmlJavaTypeAdapter(PersistentEntityAdapter.class)
 @ToString(onlyExplicitlyIncluded = true)
-public class SimpleObject implements Comparable<SimpleObject> {
+public class PetOwner implements Comparable<PetOwner> {
 
-    static final String NAMED_QUERY__FIND_BY_NAME_LIKE = "SimpleObject.findByNameLike";
+    static final String NAMED_QUERY__FIND_BY_NAME_LIKE = "PetOwner.findByNameLike";
 
     @javax.persistence.Id
     @javax.persistence.GeneratedValue(strategy = javax.persistence.GenerationType.AUTO)
@@ -70,8 +70,8 @@ public class SimpleObject implements Comparable<SimpleObject> {
     @Getter @Setter
     private long version;
 
-    public static SimpleObject withName(String name) {
-        val simpleObject = new SimpleObject();
+    public static PetOwner withName(String name) {
+        val simpleObject = new PetOwner();
         simpleObject.setName(name);
         return simpleObject;
     }
@@ -99,7 +99,7 @@ public class SimpleObject implements Comparable<SimpleObject> {
 
     @Action(semantics = IDEMPOTENT, commandPublishing = Publishing.ENABLED, executionPublishing = Publishing.ENABLED)
     @ActionLayout(associateWith = "name", promptStyle = PromptStyle.INLINE)
-    public SimpleObject updateName(
+    public PetOwner updateName(
             @Name final String name) {
         setName(name);
         return this;
@@ -129,11 +129,11 @@ public class SimpleObject implements Comparable<SimpleObject> {
 
 
 
-    private final static Comparator<SimpleObject> comparator =
-            Comparator.comparing(SimpleObject::getName);
+    private final static Comparator<PetOwner> comparator =
+            Comparator.comparing(PetOwner::getName);
 
     @Override
-    public int compareTo(final SimpleObject other) {
+    public int compareTo(final PetOwner other) {
         return comparator.compare(this, other);
     }
 

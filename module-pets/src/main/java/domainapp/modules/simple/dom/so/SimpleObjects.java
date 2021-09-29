@@ -35,25 +35,25 @@ public class SimpleObjects {
 
     @Action(semantics = SemanticsOf.NON_IDEMPOTENT)
     @ActionLayout(promptStyle = PromptStyle.DIALOG_SIDEBAR)
-    public SimpleObject create(
+    public PetOwner create(
             @Name final String name) {
-        return repositoryService.persist(SimpleObject.withName(name));
+        return repositoryService.persist(PetOwner.withName(name));
     }
 
 
     @Action(semantics = SemanticsOf.NON_IDEMPOTENT)
     @ActionLayout(promptStyle = PromptStyle.DIALOG_SIDEBAR)
-    public List<SimpleObject> findByNameLike(
+    public List<PetOwner> findByNameLike(
             @Name final String name) {
         return repositoryService.allMatches(
-                Query.named(SimpleObject.class, SimpleObject.NAMED_QUERY__FIND_BY_NAME_LIKE)
+                Query.named(PetOwner.class, PetOwner.NAMED_QUERY__FIND_BY_NAME_LIKE)
                      .withParameter("name", "%" + name + "%"));
     }
 
 
     @Action(semantics = SemanticsOf.SAFE)
     @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT, promptStyle = PromptStyle.DIALOG_SIDEBAR)
-    public List<SimpleObject> findByName(
+    public List<PetOwner> findByName(
             @Name final String name
             ) {
         return simpleObjectRepository.findByNameContaining(name);
@@ -61,7 +61,7 @@ public class SimpleObjects {
 
 
     @Programmatic
-    public SimpleObject findByNameExact(final String name) {
+    public PetOwner findByNameExact(final String name) {
         return simpleObjectRepository.findByName(name);
     }
 
@@ -69,7 +69,7 @@ public class SimpleObjects {
 
     @Action(semantics = SemanticsOf.SAFE)
     @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT)
-    public List<SimpleObject> listAll() {
+    public List<PetOwner> listAll() {
         return simpleObjectRepository.findAll();
     }
 
@@ -78,11 +78,11 @@ public class SimpleObjects {
 
     @Programmatic
     public void ping() {
-        jpaSupportService.getEntityManager(SimpleObject.class)
+        jpaSupportService.getEntityManager(PetOwner.class)
             .ifSuccess(entityManager -> {
-                final TypedQuery<SimpleObject> q = entityManager.createQuery(
-                        "SELECT p FROM SimpleObject p ORDER BY p.name",
-                        SimpleObject.class)
+                final TypedQuery<PetOwner> q = entityManager.createQuery(
+                        "SELECT p FROM PetOwner p ORDER BY p.name",
+                        PetOwner.class)
                     .setMaxResults(1);
                 q.getResultList();
             });

@@ -45,11 +45,11 @@ class SimpleObjects_Test {
 
             // expect
             when(mockRepositoryService.persist(
-                    argThat((ArgumentMatcher<SimpleObject>) simpleObject -> Objects.equals(simpleObject.getName(), someName)))
-            ).then((Answer<SimpleObject>) invocation -> invocation.getArgument(0));
+                    argThat((ArgumentMatcher<PetOwner>) simpleObject -> Objects.equals(simpleObject.getName(), someName)))
+            ).then((Answer<PetOwner>) invocation -> invocation.getArgument(0));
 
             // when
-            final SimpleObject obj = objects.create(someName);
+            final PetOwner obj = objects.create(someName);
 
             // then
             assertThat(obj).isNotNull();
@@ -64,14 +64,14 @@ class SimpleObjects_Test {
         void happyCase() {
 
             // given
-            final List<SimpleObject> all = new ArrayList<>();
+            final List<PetOwner> all = new ArrayList<>();
 
             // expecting
             when(mockSimpleObjectRepository.findAll())
                 .thenReturn(all);
 
             // when
-            final List<SimpleObject> list = objects.listAll();
+            final List<PetOwner> list = objects.listAll();
 
             // then
             assertThat(list).isEqualTo(all);

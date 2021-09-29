@@ -11,32 +11,32 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import org.apache.isis.applib.services.wrapper.DisabledException;
 import org.apache.isis.applib.services.wrapper.InvalidException;
 
-import domainapp.modules.simple.dom.so.SimpleObject;
+import domainapp.modules.simple.dom.so.PetOwner;
 import domainapp.modules.simple.fixture.SimpleObject_persona;
 import domainapp.modules.simple.integtests.SimpleModuleIntegTestAbstract;
 
 @Transactional
-public class SimpleObject_IntegTest extends SimpleModuleIntegTestAbstract {
+public class PetOwner_IntegTest extends SimpleModuleIntegTestAbstract {
 
-    SimpleObject simpleObject;
+    PetOwner petOwner;
 
     @BeforeEach
     public void setUp() {
         // given
-        simpleObject = fixtureScripts.runPersona(SimpleObject_persona.FOO);
+        petOwner = fixtureScripts.runPersona(SimpleObject_persona.FOO);
     }
 
 
     @Nested
-    public static class name extends SimpleObject_IntegTest {
+    public static class name extends PetOwner_IntegTest {
 
         @Test
         public void accessible() {
             // when
-            final String name = wrap(simpleObject).getName();
+            final String name = wrap(petOwner).getName();
 
             // then
-            assertThat(name).isEqualTo(simpleObject.getName());
+            assertThat(name).isEqualTo(petOwner.getName());
         }
 
         @Test
@@ -46,25 +46,25 @@ public class SimpleObject_IntegTest extends SimpleModuleIntegTestAbstract {
             assertThrows(DisabledException.class, ()->{
 
                 // when
-                wrap(simpleObject).setName("new name");
+                wrap(petOwner).setName("new name");
             });
         }
 
     }
 
     @Nested
-    public static class updateName extends SimpleObject_IntegTest {
+    public static class updateName extends PetOwner_IntegTest {
 
 
         @Test
         public void can_be_updated_directly() {
 
             // when
-            wrap(simpleObject).updateName("new name");
+            wrap(petOwner).updateName("new name");
             transactionService.flushTransaction();
 
             // then
-            assertThat(wrap(simpleObject).getName()).isEqualTo("new name");
+            assertThat(wrap(petOwner).getName()).isEqualTo("new name");
         }
 
         @Test
@@ -74,7 +74,7 @@ public class SimpleObject_IntegTest extends SimpleModuleIntegTestAbstract {
             InvalidException cause = assertThrows(InvalidException.class, ()->{
 
                 // when
-                wrap(simpleObject).updateName("new name!");
+                wrap(petOwner).updateName("new name!");
             });
 
             // then

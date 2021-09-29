@@ -4,10 +4,10 @@ import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface SimpleObjectRepository extends JpaRepository<SimpleObject, Long> {
+public interface SimpleObjectRepository extends JpaRepository<PetOwner, Long> {
 
-    List<SimpleObject> findByNameContaining(final String name);
+    List<PetOwner> findByNameContaining(final String name);
 
-    SimpleObject findByName(final String name);
+    PetOwner findByName(final String name);
 
 }

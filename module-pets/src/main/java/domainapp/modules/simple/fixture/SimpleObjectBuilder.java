@@ -4,20 +4,20 @@ import javax.inject.Inject;
 
 import org.apache.isis.testing.fixtures.applib.personas.BuilderScriptWithResult;
 
-import domainapp.modules.simple.dom.so.SimpleObject;
+import domainapp.modules.simple.dom.so.PetOwner;
 import domainapp.modules.simple.dom.so.SimpleObjects;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.Accessors;
 
 @Accessors(chain = true)
-public class SimpleObjectBuilder extends BuilderScriptWithResult<SimpleObject> {
+public class SimpleObjectBuilder extends BuilderScriptWithResult<PetOwner> {
 
     @Getter @Setter
     private String name;
 
     @Override
-    protected SimpleObject buildResult(final ExecutionContext ec) {
+    protected PetOwner buildResult(final ExecutionContext ec) {
 
         checkParam("name", ec, String.class);
 

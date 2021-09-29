@@ -9,7 +9,7 @@ import org.apache.isis.applib.annotation.DomainObjectLayout;
 import org.apache.isis.applib.annotation.HomePage;
 import org.apache.isis.applib.annotation.Nature;
 
-import domainapp.modules.simple.dom.so.SimpleObject;
+import domainapp.modules.simple.dom.so.PetOwner;
 import domainapp.modules.simple.dom.so.SimpleObjects;
 
 @DomainObject(
@@ -24,7 +24,7 @@ public class HomePageViewModel {
         return getObjects().size() + " objects";
     }
 
-    public List<SimpleObject> getObjects() {
+    public List<PetOwner> getObjects() {
         return simpleObjects.listAll();
     }
 
