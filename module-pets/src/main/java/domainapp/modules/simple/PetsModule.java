@@ -13,8 +13,8 @@ import domainapp.modules.simple.dom.so.PetOwner;
 @Configuration
 @ComponentScan
 @EnableJpaRepositories
-@EntityScan(basePackageClasses = {SimpleModule.class})
-public class SimpleModule implements ModuleWithFixtures {
+@EntityScan(basePackageClasses = {PetsModule.class})
+public class PetsModule implements ModuleWithFixtures {
 
     @Override
     public FixtureScript getTeardownFixture() {

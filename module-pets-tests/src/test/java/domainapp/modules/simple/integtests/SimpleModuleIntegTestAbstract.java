@@ -15,7 +15,7 @@ import org.apache.isis.security.bypass.IsisModuleSecurityBypass;
 import org.apache.isis.testing.fixtures.applib.IsisIntegrationTestAbstractWithFixtures;
 import org.apache.isis.testing.fixtures.applib.IsisModuleTestingFixturesApplib;
 
-import domainapp.modules.simple.SimpleModule;
+import domainapp.modules.simple.PetsModule;
 
 
 @SpringBootTest(
@@ -37,7 +37,7 @@ public abstract class SimpleModuleIntegTestAbstract extends IsisIntegrationTestA
             IsisModulePersistenceJpaEclipselink.class,
             IsisModuleTestingFixturesApplib.class,
 
-            SimpleModule.class
+            PetsModule.class
     })
     @PropertySources({
             @PropertySource(IsisPresets.H2InMemory_withUniqueSchema),
