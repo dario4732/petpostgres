@@ -38,7 +38,7 @@ import domainapp.modules.simple.types.Notes;
 @javax.persistence.Table(
     schema="pets",
     uniqueConstraints = {
-        @javax.persistence.UniqueConstraint(name = "SimpleObject__name__UNQ", columnNames = {"NAME"})
+        @javax.persistence.UniqueConstraint(name = "PetOwner__name__UNQ", columnNames = {"NAME"})
     }
 )
 @javax.persistence.NamedQueries({
