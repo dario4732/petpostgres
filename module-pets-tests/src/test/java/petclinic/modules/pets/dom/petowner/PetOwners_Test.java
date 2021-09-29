@@ -1,4 +1,4 @@
-package domainapp.modules.simple.dom.so;
+package petclinic.modules.pets.dom.petowner;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,6 +19,10 @@ import static org.mockito.Mockito.when;
 
 import org.apache.isis.applib.services.repository.RepositoryService;
 import org.apache.isis.persistence.jpa.applib.services.JpaSupportService;
+
+import petclinic.modules.pets.dom.petowner.PetOwner;
+import petclinic.modules.pets.dom.petowner.PetOwnerRepository;
+import petclinic.modules.pets.dom.petowner.PetOwners;
 
 @ExtendWith(MockitoExtension.class)
 class PetOwners_Test {

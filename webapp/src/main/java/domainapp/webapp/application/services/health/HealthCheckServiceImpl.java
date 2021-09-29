@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import org.apache.isis.applib.services.health.Health;
 import org.apache.isis.applib.services.health.HealthCheckService;
 
-import domainapp.modules.simple.dom.so.PetOwners;
+import petclinic.modules.pets.dom.petowner.PetOwners;
 
 @Service
 @Named("domainapp.HealthCheckServiceImpl")

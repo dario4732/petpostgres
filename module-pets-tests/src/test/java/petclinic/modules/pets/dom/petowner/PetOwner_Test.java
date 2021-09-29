@@ -1,4 +1,4 @@
-package domainapp.modules.simple.dom.so;
+package petclinic.modules.pets.dom.petowner;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Nested;
@@ -14,6 +14,8 @@ import static org.mockito.Mockito.when;
 import org.apache.isis.applib.services.message.MessageService;
 import org.apache.isis.applib.services.repository.RepositoryService;
 import org.apache.isis.applib.services.title.TitleService;
+
+import petclinic.modules.pets.dom.petowner.PetOwner;
 
 @ExtendWith(MockitoExtension.class)
 class PetOwner_Test {

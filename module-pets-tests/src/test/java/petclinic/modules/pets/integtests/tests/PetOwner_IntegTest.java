@@ -1,4 +1,4 @@
-package domainapp.modules.simple.integtests.tests;
+package petclinic.modules.pets.integtests.tests;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Nested;
@@ -11,9 +11,9 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import org.apache.isis.applib.services.wrapper.DisabledException;
 import org.apache.isis.applib.services.wrapper.InvalidException;
 
-import domainapp.modules.simple.dom.so.PetOwner;
-import domainapp.modules.simple.fixture.PetOwner_persona;
-import domainapp.modules.simple.integtests.PetsModuleIntegTestAbstract;
+import petclinic.modules.pets.dom.petowner.PetOwner;
+import petclinic.modules.pets.fixture.PetOwner_persona;
+import petclinic.modules.pets.integtests.PetsModuleIntegTestAbstract;
 
 @Transactional
 public class PetOwner_IntegTest extends PetsModuleIntegTestAbstract {

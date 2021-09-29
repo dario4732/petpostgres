@@ -1,4 +1,4 @@
-package domainapp.modules.simple.types;
+package petclinic.modules.pets.types;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

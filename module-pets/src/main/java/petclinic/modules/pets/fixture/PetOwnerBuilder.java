@@ -1,11 +1,11 @@
-package domainapp.modules.simple.fixture;
+package petclinic.modules.pets.fixture;
 
 import javax.inject.Inject;
 
 import org.apache.isis.testing.fixtures.applib.personas.BuilderScriptWithResult;
 
-import domainapp.modules.simple.dom.so.PetOwner;
-import domainapp.modules.simple.dom.so.PetOwners;
+import petclinic.modules.pets.dom.petowner.PetOwner;
+import petclinic.modules.pets.dom.petowner.PetOwners;
 
 import lombok.Getter;
 import lombok.Setter;

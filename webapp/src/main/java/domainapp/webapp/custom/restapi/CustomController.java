@@ -17,8 +17,8 @@ import org.apache.isis.applib.services.xactn.TransactionalProcessor;
 
 import lombok.RequiredArgsConstructor;
 
-import domainapp.modules.simple.dom.so.PetOwner;
-import domainapp.modules.simple.dom.so.PetOwners;
+import petclinic.modules.pets.dom.petowner.PetOwner;
+import petclinic.modules.pets.dom.petowner.PetOwners;
 
 @RestController
 @RequiredArgsConstructor(onConstructor_ = {@Inject})

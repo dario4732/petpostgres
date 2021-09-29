@@ -1,4 +1,4 @@
-package domainapp.modules.simple.dom.so;
+package petclinic.modules.pets.dom.petowner;
 
 import java.util.Comparator;
 
@@ -30,8 +30,8 @@ import lombok.Setter;
 import lombok.ToString;
 import lombok.val;
 
-import domainapp.modules.simple.types.Name;
-import domainapp.modules.simple.types.Notes;
+import petclinic.modules.pets.types.Name;
+import petclinic.modules.pets.types.Notes;
 
 
 @javax.persistence.Entity

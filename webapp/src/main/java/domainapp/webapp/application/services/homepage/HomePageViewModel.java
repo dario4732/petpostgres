@@ -9,8 +9,8 @@ import org.apache.isis.applib.annotation.DomainObjectLayout;
 import org.apache.isis.applib.annotation.HomePage;
 import org.apache.isis.applib.annotation.Nature;
 
-import domainapp.modules.simple.dom.so.PetOwner;
-import domainapp.modules.simple.dom.so.PetOwners;
+import petclinic.modules.pets.dom.petowner.PetOwner;
+import petclinic.modules.pets.dom.petowner.PetOwners;
 
 @DomainObject(
         nature = Nature.VIEW_MODEL,

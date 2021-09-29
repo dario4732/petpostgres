@@ -1,4 +1,4 @@
-package domainapp.modules.simple.integtests;
+package petclinic.modules.pets.integtests;
 
 import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -15,7 +15,7 @@ import org.apache.isis.security.bypass.IsisModuleSecurityBypass;
 import org.apache.isis.testing.fixtures.applib.IsisIntegrationTestAbstractWithFixtures;
 import org.apache.isis.testing.fixtures.applib.IsisModuleTestingFixturesApplib;
 
-import domainapp.modules.simple.PetsModule;
+import petclinic.modules.pets.PetsModule;
 
 
 @SpringBootTest(

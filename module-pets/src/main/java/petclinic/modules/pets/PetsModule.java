@@ -1,4 +1,4 @@
-package domainapp.modules.simple;
+package petclinic.modules.pets;
 
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.ComponentScan;
@@ -8,7 +8,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.apache.isis.testing.fixtures.applib.fixturescripts.FixtureScript;
 import org.apache.isis.testing.fixtures.applib.modules.ModuleWithFixtures;
 
-import domainapp.modules.simple.dom.so.PetOwner;
+import petclinic.modules.pets.dom.petowner.PetOwner;
 
 @Configuration
 @ComponentScan

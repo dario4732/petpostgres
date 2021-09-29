@@ -5,7 +5,7 @@ import javax.inject.Inject;
 import org.apache.isis.testing.fixtures.applib.fixturescripts.FixtureScript;
 import org.apache.isis.testing.fixtures.applib.modules.ModuleWithFixturesService;
 
-import domainapp.modules.simple.fixture.PetOwner_persona;
+import petclinic.modules.pets.fixture.PetOwner_persona;
 
 public class DomainAppDemo extends FixtureScript {
 

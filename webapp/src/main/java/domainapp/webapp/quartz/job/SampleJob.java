@@ -20,8 +20,8 @@ import org.apache.isis.applib.services.xactn.TransactionalProcessor;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 
-import domainapp.modules.simple.dom.so.PetOwner;
-import domainapp.modules.simple.dom.so.PetOwners;
+import petclinic.modules.pets.dom.petowner.PetOwner;
+import petclinic.modules.pets.dom.petowner.PetOwners;
 
 @Component
 @RequiredArgsConstructor(onConstructor_ = {@Inject})

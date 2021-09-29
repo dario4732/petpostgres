@@ -1,4 +1,4 @@
-package domainapp.modules.simple.integtests.tests;
+package petclinic.modules.pets.integtests.tests;
 
 import java.util.List;
 
@@ -15,10 +15,10 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.apache.isis.testing.unittestsupport.applib.matchers.ThrowableMatchers;
 
-import domainapp.modules.simple.dom.so.PetOwner;
-import domainapp.modules.simple.dom.so.PetOwners;
-import domainapp.modules.simple.fixture.PetOwner_persona;
-import domainapp.modules.simple.integtests.PetsModuleIntegTestAbstract;
+import petclinic.modules.pets.dom.petowner.PetOwner;
+import petclinic.modules.pets.dom.petowner.PetOwners;
+import petclinic.modules.pets.fixture.PetOwner_persona;
+import petclinic.modules.pets.integtests.PetsModuleIntegTestAbstract;
 
 @Transactional
 public class PetOwners_IntegTest extends PetsModuleIntegTestAbstract {

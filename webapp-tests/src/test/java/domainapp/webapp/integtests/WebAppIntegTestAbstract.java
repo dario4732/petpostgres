@@ -16,7 +16,7 @@ import org.apache.isis.security.bypass.IsisModuleSecurityBypass;
 import org.apache.isis.testing.fixtures.applib.IsisModuleTestingFixturesApplib;
 import org.apache.isis.testing.integtestsupport.applib.IsisIntegrationTestAbstract;
 
-import domainapp.modules.simple.PetsModule;
+import petclinic.modules.pets.PetsModule;
 import domainapp.webapp.application.ApplicationModule;
 
 @SpringBootTest(

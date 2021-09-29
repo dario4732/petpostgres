@@ -13,9 +13,9 @@ import org.apache.isis.applib.services.xactn.TransactionService;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import domainapp.modules.simple.dom.so.PetOwner;
+import petclinic.modules.pets.dom.petowner.PetOwner;
 import domainapp.webapp.integtests.WebAppIntegTestAbstract;
-import domainapp.modules.simple.dom.so.PetOwners;
+import petclinic.modules.pets.dom.petowner.PetOwners;
 
 @Transactional
 class Smoke_IntegTest extends WebAppIntegTestAbstract {

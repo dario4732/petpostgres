@@ -1,8 +1,10 @@
-package domainapp.modules.simple.dom.so;
+package petclinic.modules.pets.dom.petowner;
 
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+
+import petclinic.modules.pets.dom.petowner.PetOwner;
 
 public interface PetOwnerRepository extends JpaRepository<PetOwner, Long> {
 

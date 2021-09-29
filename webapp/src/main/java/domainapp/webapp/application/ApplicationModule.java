@@ -4,7 +4,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 
-import domainapp.modules.simple.PetsModule;
+import petclinic.modules.pets.PetsModule;
 
 @Configuration
 @Import(PetsModule.class)
