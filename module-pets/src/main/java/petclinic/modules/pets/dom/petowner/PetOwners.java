@@ -47,10 +47,10 @@ public class PetOwners {
     @Action(semantics = SemanticsOf.NON_IDEMPOTENT)
     @ActionLayout(promptStyle = PromptStyle.DIALOG_SIDEBAR)
     public List<PetOwner> findByNameLike(
-            @Name final String name) {
+            @Name final String lastName) {
         return repositoryService.allMatches(
                 Query.named(PetOwner.class, PetOwner.NAMED_QUERY__FIND_BY_NAME_LIKE)
-                     .withParameter("name", "%" + name + "%"));
+                     .withParameter("lastName", "%" + lastName + "%"));
     }
 
 

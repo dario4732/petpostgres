@@ -58,7 +58,7 @@ import petclinic.modules.pets.types.Notes;
                 name = PetOwner.NAMED_QUERY__FIND_BY_NAME_LIKE,
                 query = "SELECT so " +
                         "FROM PetOwner so " +
-                        "WHERE so.lastName LIKE :name"
+                        "WHERE so.lastName LIKE :lastName"
         )
 })
 @EntityListeners(IsisEntityListener.class)
