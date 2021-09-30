@@ -46,7 +46,7 @@ public class PetOwners {
 
     @Action(semantics = SemanticsOf.NON_IDEMPOTENT)
     @ActionLayout(promptStyle = PromptStyle.DIALOG_SIDEBAR)
-    public List<PetOwner> findByNameLike(
+    public List<PetOwner> findByLastNameLike(
             @Name final String lastName) {
         return repositoryService.allMatches(
                 Query.named(PetOwner.class, PetOwner.NAMED_QUERY__FIND_BY_LAST_NAME_LIKE)
@@ -56,15 +56,15 @@ public class PetOwners {
 
     @Action(semantics = SemanticsOf.SAFE)
     @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT, promptStyle = PromptStyle.DIALOG_SIDEBAR)
-    public List<PetOwner> findByName(
-            @Name final String name
+    public List<PetOwner> findByLastName(
+            @Name final String lastName
             ) {
         return petOwnerRepository.findByLastNameContaining(lastName);
     }
 
 
     @Programmatic
-    public PetOwner findByNameExact(final String name) {
+    public PetOwner findByLastNameExact(final String lastName) {
         return petOwnerRepository.findByLastName(lastName);
     }
 

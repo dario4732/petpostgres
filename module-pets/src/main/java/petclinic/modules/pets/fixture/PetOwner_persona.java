@@ -35,7 +35,7 @@ implements PersonaWithBuilderScript<PetOwnerBuilder>, PersonaWithFinder<PetOwner
     @Override
     public PetOwner findUsing(final ServiceRegistry serviceRegistry) {
         PetOwners petOwners = serviceRegistry.lookupService(PetOwners.class).orElse(null);
-        return petOwners.findByNameExact(name);
+        return petOwners.findByLastNameExact(name);
     }
 
     public static class PersistAll
