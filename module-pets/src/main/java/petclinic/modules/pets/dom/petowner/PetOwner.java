@@ -55,7 +55,7 @@ import petclinic.modules.pets.types.Notes;
 )
 @NamedQueries({
         @NamedQuery(
-                name = PetOwner.NAMED_QUERY__FIND_BY_NAME_LIKE,
+                name = PetOwner.NAMED_QUERY__FIND_BY_LAST_NAME_LIKE,
                 query = "SELECT so " +
                         "FROM PetOwner so " +
                         "WHERE so.lastName LIKE :lastName"
@@ -69,7 +69,7 @@ import petclinic.modules.pets.types.Notes;
 @ToString(onlyExplicitlyIncluded = true)
 public class PetOwner implements Comparable<PetOwner> {
 
-    static final String NAMED_QUERY__FIND_BY_NAME_LIKE = "PetOwner.findByNameLike";
+    static final String NAMED_QUERY__FIND_BY_LAST_NAME_LIKE = "PetOwner.findByLastNameLike";
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

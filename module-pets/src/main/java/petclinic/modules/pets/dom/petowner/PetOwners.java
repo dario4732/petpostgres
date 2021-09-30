@@ -49,7 +49,7 @@ public class PetOwners {
     public List<PetOwner> findByNameLike(
             @Name final String lastName) {
         return repositoryService.allMatches(
-                Query.named(PetOwner.class, PetOwner.NAMED_QUERY__FIND_BY_NAME_LIKE)
+                Query.named(PetOwner.class, PetOwner.NAMED_QUERY__FIND_BY_LAST_NAME_LIKE)
                      .withParameter("lastName", "%" + lastName + "%"));
     }
 
