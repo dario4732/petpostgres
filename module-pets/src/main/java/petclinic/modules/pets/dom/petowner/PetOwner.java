@@ -84,8 +84,13 @@ public class PetOwner implements Comparable<PetOwner> {
     private long version;
 
     public static PetOwner withName(String name) {
+        return withName(name, null);
+    }
+
+    public static PetOwner withName(String lastName, String firstName) {
         val simpleObject = new PetOwner();
-        simpleObject.setLastName(name);
+        simpleObject.setLastName(lastName);
+        simpleObject.setFirstName(firstName);
         return simpleObject;
     }
 
