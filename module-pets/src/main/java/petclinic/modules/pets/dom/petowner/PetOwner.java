@@ -50,7 +50,7 @@ import petclinic.modules.pets.types.Notes;
 @Table(
     schema="pets",
     uniqueConstraints = {
-        @UniqueConstraint(name = "PetOwner__name__UNQ", columnNames = {"NAME"})
+        @UniqueConstraint(name = "PetOwner__lastName__UNQ", columnNames = {"LASTNAME"})
     }
 )
 @NamedQueries({
