@@ -8,8 +8,8 @@ import petclinic.modules.pets.dom.petowner.PetOwner;
 
 public interface PetOwnerRepository extends JpaRepository<PetOwner, Long> {
 
-    List<PetOwner> findByNameContaining(final String name);
+    List<PetOwner> findByLastNameContaining(final String name);
 
-    PetOwner findByName(final String name);
+    PetOwner findByLastName(final String name);
 
 }

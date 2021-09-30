@@ -59,13 +59,13 @@ public class PetOwners {
     public List<PetOwner> findByName(
             @Name final String name
             ) {
-        return petOwnerRepository.findByNameContaining(name);
+        return petOwnerRepository.findByLastNameContaining(lastName);
     }
 
 
     @Programmatic
     public PetOwner findByNameExact(final String name) {
-        return petOwnerRepository.findByName(name);
+        return petOwnerRepository.findByLastName(lastName);
     }
 
 
