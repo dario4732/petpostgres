@@ -42,6 +42,7 @@ import lombok.Setter;
 import lombok.ToString;
 import lombok.val;
 
+import petclinic.modules.pets.types.FirstName;
 import petclinic.modules.pets.types.LastName;
 import petclinic.modules.pets.types.Notes;
 
@@ -100,6 +101,12 @@ public class PetOwner implements Comparable<PetOwner> {
     @Getter @Setter @ToString.Include
     @PropertyLayout(fieldSetId = "name", sequence = "1")
     private String lastName;
+
+    @FirstName
+    @Column(length = FirstName.MAX_LEN, nullable = true)
+    @Getter @Setter @ToString.Include
+    @PropertyLayout(fieldSetId = "name", sequence = "2")
+    private String firstName;
 
     @Notes
     @Column(length = Notes.MAX_LEN, nullable = true)
