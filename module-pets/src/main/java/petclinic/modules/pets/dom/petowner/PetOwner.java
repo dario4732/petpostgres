@@ -110,7 +110,7 @@ public class PetOwner implements Comparable<PetOwner> {
 
 
     @Action(semantics = IDEMPOTENT, commandPublishing = Publishing.ENABLED, executionPublishing = Publishing.ENABLED)
-    @ActionLayout(associateWith = "name", promptStyle = PromptStyle.INLINE)
+    @ActionLayout(associateWith = "lastName", promptStyle = PromptStyle.INLINE)
     public PetOwner updateName(
             @Name final String name) {
         setLastName(name);
@@ -131,7 +131,7 @@ public class PetOwner implements Comparable<PetOwner> {
 
     @Action(semantics = NON_IDEMPOTENT_ARE_YOU_SURE)
     @ActionLayout(
-            associateWith = "name", position = ActionLayout.Position.PANEL,
+            associateWith = "lastName", position = ActionLayout.Position.PANEL,
             describedAs = "Deletes this object from the persistent datastore")
     public void delete() {
         final String title = titleService.titleOf(this);
