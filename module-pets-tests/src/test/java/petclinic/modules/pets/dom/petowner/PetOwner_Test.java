@@ -15,8 +15,6 @@ import org.apache.isis.applib.services.message.MessageService;
 import org.apache.isis.applib.services.repository.RepositoryService;
 import org.apache.isis.applib.services.title.TitleService;
 
-import petclinic.modules.pets.dom.petowner.PetOwner;
-
 @ExtendWith(MockitoExtension.class)
 class PetOwner_Test {
 
@@ -40,13 +38,13 @@ class PetOwner_Test {
         @Test
         void happy_case() {
             // given
-            assertThat(object.getName()).isEqualTo("Foo");
+            assertThat(object.getLastName()).isEqualTo("Foo");
 
             // when
             object.updateName("Bar");
 
             // then
-            assertThat(object.getName()).isEqualTo("Bar");
+            assertThat(object.getLastName()).isEqualTo("Bar");
         }
 
     }

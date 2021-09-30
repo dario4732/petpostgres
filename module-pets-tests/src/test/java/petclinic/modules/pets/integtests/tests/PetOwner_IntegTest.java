@@ -33,10 +33,10 @@ public class PetOwner_IntegTest extends PetsModuleIntegTestAbstract {
         @Test
         public void accessible() {
             // when
-            final String name = wrap(petOwner).getName();
+            final String name = wrap(petOwner).getLastName();
 
             // then
-            assertThat(name).isEqualTo(petOwner.getName());
+            assertThat(name).isEqualTo(petOwner.getLastName());
         }
 
         @Test
@@ -46,7 +46,7 @@ public class PetOwner_IntegTest extends PetsModuleIntegTestAbstract {
             assertThrows(DisabledException.class, ()->{
 
                 // when
-                wrap(petOwner).setName("new name");
+                wrap(petOwner).setLastName("new name");
             });
         }
 
@@ -64,7 +64,7 @@ public class PetOwner_IntegTest extends PetsModuleIntegTestAbstract {
             transactionService.flushTransaction();
 
             // then
-            assertThat(wrap(petOwner).getName()).isEqualTo("new name");
+            assertThat(wrap(petOwner).getLastName()).isEqualTo("new name");
         }
 
         @Test

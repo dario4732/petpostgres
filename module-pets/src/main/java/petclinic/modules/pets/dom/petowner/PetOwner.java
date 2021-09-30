@@ -58,7 +58,7 @@ import petclinic.modules.pets.types.Notes;
                 name = PetOwner.NAMED_QUERY__FIND_BY_NAME_LIKE,
                 query = "SELECT so " +
                         "FROM PetOwner so " +
-                        "WHERE so.name LIKE :name"
+                        "WHERE so.lastName LIKE :name"
         )
 })
 @EntityListeners(IsisEntityListener.class)
@@ -84,7 +84,7 @@ public class PetOwner implements Comparable<PetOwner> {
 
     public static PetOwner withName(String name) {
         val simpleObject = new PetOwner();
-        simpleObject.setName(name);
+        simpleObject.setLastName(name);
         return simpleObject;
     }
 
@@ -99,7 +99,7 @@ public class PetOwner implements Comparable<PetOwner> {
     @Column(length = Name.MAX_LEN, nullable = false)
     @Getter @Setter @ToString.Include
     @PropertyLayout(fieldSetId = "name", sequence = "1")
-    private String name;
+    private String lastName;
 
     @Notes
     @Column(length = Notes.MAX_LEN, nullable = true)
@@ -113,11 +113,11 @@ public class PetOwner implements Comparable<PetOwner> {
     @ActionLayout(associateWith = "name", promptStyle = PromptStyle.INLINE)
     public PetOwner updateName(
             @Name final String name) {
-        setName(name);
+        setLastName(name);
         return this;
     }
     public String default0UpdateName() {
-        return getName();
+        return getLastName();
     }
     public String validate0UpdateName(String newName) {
         for (char prohibitedCharacter : "&%$!".toCharArray()) {
@@ -142,7 +142,7 @@ public class PetOwner implements Comparable<PetOwner> {
 
 
     private final static Comparator<PetOwner> comparator =
-            Comparator.comparing(PetOwner::getName);
+            Comparator.comparing(PetOwner::getLastName);
 
     @Override
     public int compareTo(final PetOwner other) {

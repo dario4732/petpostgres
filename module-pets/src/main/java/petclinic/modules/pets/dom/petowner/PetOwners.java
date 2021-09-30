@@ -84,7 +84,7 @@ public class PetOwners {
         jpaSupportService.getEntityManager(PetOwner.class)
             .ifSuccess(entityManager -> {
                 final TypedQuery<PetOwner> q = entityManager.createQuery(
-                        "SELECT p FROM PetOwner p ORDER BY p.name",
+                        "SELECT p FROM PetOwner p ORDER BY p.lastName",
                         PetOwner.class)
                     .setMaxResults(1);
                 q.getResultList();

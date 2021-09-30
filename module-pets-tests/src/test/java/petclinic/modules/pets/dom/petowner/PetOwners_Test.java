@@ -20,10 +20,6 @@ import static org.mockito.Mockito.when;
 import org.apache.isis.applib.services.repository.RepositoryService;
 import org.apache.isis.persistence.jpa.applib.services.JpaSupportService;
 
-import petclinic.modules.pets.dom.petowner.PetOwner;
-import petclinic.modules.pets.dom.petowner.PetOwnerRepository;
-import petclinic.modules.pets.dom.petowner.PetOwners;
-
 @ExtendWith(MockitoExtension.class)
 class PetOwners_Test {
 
@@ -49,7 +45,7 @@ class PetOwners_Test {
 
             // expect
             when(mockRepositoryService.persist(
-                    argThat((ArgumentMatcher<PetOwner>) simpleObject -> Objects.equals(simpleObject.getName(), someName)))
+                    argThat((ArgumentMatcher<PetOwner>) simpleObject -> Objects.equals(simpleObject.getLastName(), someName)))
             ).then((Answer<PetOwner>) invocation -> invocation.getArgument(0));
 
             // when
@@ -57,7 +53,7 @@ class PetOwners_Test {
 
             // then
             assertThat(obj).isNotNull();
-            assertThat(obj.getName()).isEqualTo(someName);
+            assertThat(obj.getLastName()).isEqualTo(someName);
         }
     }
 

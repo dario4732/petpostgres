@@ -58,7 +58,7 @@ class Smoke_IntegTest extends WebAppIntegTestAbstract {
         transactionService.flushTransaction();
 
         // then
-        assertThat(wrap(fred).getName()).isEqualTo("Freddy");
+        assertThat(wrap(fred).getLastName()).isEqualTo("Freddy");
 
 
         // when
