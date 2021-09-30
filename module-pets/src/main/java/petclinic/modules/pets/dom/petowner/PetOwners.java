@@ -21,7 +21,7 @@ import org.apache.isis.persistence.jpa.applib.services.JpaSupportService;
 
 import lombok.RequiredArgsConstructor;
 
-import petclinic.modules.pets.types.Name;
+import petclinic.modules.pets.types.LastName;
 
 @DomainService(
         nature = NatureOfService.VIEW,
@@ -39,7 +39,7 @@ public class PetOwners {
     @Action(semantics = SemanticsOf.NON_IDEMPOTENT)
     @ActionLayout(promptStyle = PromptStyle.DIALOG_SIDEBAR)
     public PetOwner create(
-            @Name final String name) {
+            @LastName final String name) {
         return repositoryService.persist(PetOwner.withName(name));
     }
 
@@ -47,7 +47,7 @@ public class PetOwners {
     @Action(semantics = SemanticsOf.NON_IDEMPOTENT)
     @ActionLayout(promptStyle = PromptStyle.DIALOG_SIDEBAR)
     public List<PetOwner> findByLastNameLike(
-            @Name final String lastName) {
+            @LastName final String lastName) {
         return repositoryService.allMatches(
                 Query.named(PetOwner.class, PetOwner.NAMED_QUERY__FIND_BY_LAST_NAME_LIKE)
                      .withParameter("lastName", "%" + lastName + "%"));
@@ -57,7 +57,7 @@ public class PetOwners {
     @Action(semantics = SemanticsOf.SAFE)
     @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT, promptStyle = PromptStyle.DIALOG_SIDEBAR)
     public List<PetOwner> findByLastName(
-            @Name final String lastName
+            @LastName final String lastName
             ) {
         return petOwnerRepository.findByLastNameContaining(lastName);
     }
