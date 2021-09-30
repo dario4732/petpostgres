@@ -25,7 +25,7 @@ import petclinic.modules.pets.PetsModule;
 public abstract class PetsModuleIntegTestAbstract extends IsisIntegrationTestAbstractWithFixtures {
 
     /**
-     * Compared to the production app manifest <code>domainapp.webapp.AppManifest</code>,
+     * Compared to the production app manifest <code>petclinic.webapp.AppManifest</code>,
      * here we in effect disable security checks, and we exclude any web/UI modules.
      */
     @SpringBootConfiguration
