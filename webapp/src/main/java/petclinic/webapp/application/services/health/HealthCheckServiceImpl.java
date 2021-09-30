@@ -11,7 +11,7 @@ import org.apache.isis.applib.services.health.HealthCheckService;
 import petclinic.modules.pets.dom.petowner.PetOwners;
 
 @Service
-@Named("domainapp.HealthCheckServiceImpl")
+@Named("petclinic.HealthCheckServiceImpl")
 public class HealthCheckServiceImpl implements HealthCheckService {
 
     private final PetOwners petOwners;
