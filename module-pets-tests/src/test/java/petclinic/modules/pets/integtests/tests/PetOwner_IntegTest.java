@@ -23,7 +23,7 @@ public class PetOwner_IntegTest extends PetsModuleIntegTestAbstract {
     @BeforeEach
     public void setUp() {
         // given
-        petOwner = fixtureScripts.runPersona(PetOwner_persona.FOO);
+        petOwner = fixtureScripts.runPersona(PetOwner_persona.JONES);
     }
 
 

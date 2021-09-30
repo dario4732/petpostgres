@@ -9,22 +9,24 @@ import petclinic.modules.pets.dom.petowner.PetOwner;
 import petclinic.modules.pets.dom.petowner.PetOwners;
 
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 
 @AllArgsConstructor
 public enum PetOwner_persona
 implements PersonaWithBuilderScript<PetOwnerBuilder>, PersonaWithFinder<PetOwner> {
 
-    FOO("Foo"),
-    BAR("Bar"),
-    BAZ("Baz"),
-    FRODO("Frodo"),
-    FROYO("Froyo"),
-    FIZZ("Fizz"),
-    BIP("Bip"),
-    BOP("Bop"),
-    BANG("Bang"),
-    BOO("Boo");
+    JONES("Jones"),
+    FARRELL("Farrell"),
+    UNDERHILL("Underhill"),
+    FORD("Ford"),
+    YOUNGS("Youngs"),
+    MAY("May"),
+    GENGE("Genge"),
+    EWELS("Ewels"),
+    VUNIPOLA("Vunipola"),
+    ITOJE("Itoje");
 
+    @Getter
     private final String name;
 
     @Override
