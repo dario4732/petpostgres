@@ -60,7 +60,7 @@ public class PetOwner_IntegTest extends PetsModuleIntegTestAbstract {
         public void can_be_updated_directly() {
 
             // when
-            wrap(petOwner).updateName("new name");
+            wrap(petOwner).updateName("new name", null);
             transactionService.flushTransaction();
 
             // then
@@ -74,7 +74,7 @@ public class PetOwner_IntegTest extends PetsModuleIntegTestAbstract {
             InvalidException cause = assertThrows(InvalidException.class, ()->{
 
                 // when
-                wrap(petOwner).updateName("new name!");
+                wrap(petOwner).updateName("new name!", null);
             });
 
             // then

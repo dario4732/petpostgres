@@ -41,7 +41,7 @@ class PetOwner_Test {
             assertThat(object.getLastName()).isEqualTo("Foo");
 
             // when
-            object.updateName("Bar");
+            object.updateName("Bar", null);
 
             // then
             assertThat(object.getLastName()).isEqualTo("Bar");
