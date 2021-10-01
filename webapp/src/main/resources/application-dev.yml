@@ -1,0 +1,4 @@
+isis:
+  testing:
+    fixtures:
+      initial-script: petclinic.webapp.application.fixture.scenarios.PetClinicDemo
