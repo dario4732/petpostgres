@@ -60,7 +60,7 @@ public class PetOwners_IntegTest extends PetsModuleIntegTestAbstract {
         @Test
         public void happyCase() {
 
-            wrap(menu).create(PetOwner_persona.FARRELL.name());
+            wrap(menu).create(PetOwner_persona.FARRELL.name(), null);
 
             // then
             final List<PetOwner> all = wrap(menu).listAll();
@@ -78,7 +78,7 @@ public class PetOwners_IntegTest extends PetsModuleIntegTestAbstract {
             Throwable cause = assertThrows(Throwable.class, ()->{
 
                 // when
-                wrap(menu).create(PetOwner_persona.MAY.getName());
+                wrap(menu).create(PetOwner_persona.MAY.getName(), null);
                 transactionService.flushTransaction();
 
             });

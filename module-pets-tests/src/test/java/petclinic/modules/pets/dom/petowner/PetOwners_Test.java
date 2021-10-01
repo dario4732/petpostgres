@@ -49,7 +49,7 @@ class PetOwners_Test {
             ).then((Answer<PetOwner>) invocation -> invocation.getArgument(0));
 
             // when
-            final PetOwner obj = objects.create(someName);
+            final PetOwner obj = objects.create(someName, null);
 
             // then
             assertThat(obj).isNotNull();

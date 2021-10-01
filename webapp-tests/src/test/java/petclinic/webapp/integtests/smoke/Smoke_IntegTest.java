@@ -34,7 +34,7 @@ class Smoke_IntegTest extends WebAppIntegTestAbstract {
 
 
         // when
-        final PetOwner fred = wrap(menu).create("Fred");
+        final PetOwner fred = wrap(menu).create("Fred", null);
         transactionService.flushTransaction();
 
         // then
@@ -44,7 +44,7 @@ class Smoke_IntegTest extends WebAppIntegTestAbstract {
 
 
         // when
-        final PetOwner bill = wrap(menu).create("Bill");
+        final PetOwner bill = wrap(menu).create("Bill", null);
         transactionService.flushTransaction();
 
         // then

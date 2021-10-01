@@ -21,6 +21,7 @@ import org.apache.isis.persistence.jpa.applib.services.JpaSupportService;
 
 import lombok.RequiredArgsConstructor;
 
+import petclinic.modules.pets.types.FirstName;
 import petclinic.modules.pets.types.LastName;
 
 @DomainService(
@@ -39,8 +40,9 @@ public class PetOwners {
     @Action(semantics = SemanticsOf.NON_IDEMPOTENT)
     @ActionLayout(promptStyle = PromptStyle.DIALOG_SIDEBAR)
     public PetOwner create(
-            @LastName final String name) {
-        return repositoryService.persist(PetOwner.withName(name));
+            @LastName final String lastName,
+            @FirstName final String firstName) {
+        return repositoryService.persist(PetOwner.withName(lastName, firstName));
     }
 
 

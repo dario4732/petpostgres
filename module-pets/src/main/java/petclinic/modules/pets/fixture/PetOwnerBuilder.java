@@ -22,7 +22,7 @@ public class PetOwnerBuilder extends BuilderScriptWithResult<PetOwner> {
 
         checkParam("name", ec, String.class);
 
-        return wrap(petOwners).create(name);
+        return wrap(petOwners).create(name, null);
     }
 
     // -- DEPENDENCIES
