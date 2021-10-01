@@ -38,7 +38,7 @@ public class PetOwners {
 
 
     @Action(semantics = SemanticsOf.NON_IDEMPOTENT)
-    @ActionLayout(promptStyle = PromptStyle.DIALOG_SIDEBAR)
+    @ActionLayout(/*promptStyle = PromptStyle.DIALOG_MODAL*/)
     public PetOwner create(
             @LastName final String lastName,
             @FirstName final String firstName) {

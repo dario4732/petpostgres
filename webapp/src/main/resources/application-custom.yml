@@ -1,0 +1,6 @@
+isis:
+  viewer:
+    wicket:
+      prompt-style: inline
+      #dialog-mode: modal   # unused if prompt-style is inline
+      dialog-mode-for-menu: sidebar
