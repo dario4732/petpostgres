@@ -130,7 +130,7 @@ public class PetOwner implements Comparable<PetOwner> {
 
 
     @Action(semantics = IDEMPOTENT, commandPublishing = Publishing.ENABLED, executionPublishing = Publishing.ENABLED)
-    @ActionLayout(associateWith = "lastName")
+    @ActionLayout(associateWith = "name")
     public PetOwner updateName(
             @LastName final String lastName,
             @FirstName final String firstName) {
