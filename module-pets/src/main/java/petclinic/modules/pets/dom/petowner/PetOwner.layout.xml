@@ -31,8 +31,8 @@
                     </bs3:row>
                 </bs3:tab>
             </bs3:tabGroup>
-            <bs3:tabGroup>
-            </bs3:tabGroup>
+            <c:fieldSet id="contactDetails" name="Contact Details"/>
+            <c:fieldSet id="notes" name="Notes"/>
         </bs3:col>
         <bs3:col span="6">
             <bs3:tabGroup  unreferencedCollections="true">
