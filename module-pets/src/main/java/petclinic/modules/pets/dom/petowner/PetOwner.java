@@ -102,6 +102,12 @@ public class PetOwner implements Comparable<PetOwner> {
         return getLastName() + (getFirstName() != null ? ", " + getFirstName() : "");
     }
 
+    @Transient
+    @PropertyLayout(fieldSetId = "name", sequence = "1")
+    public String getName() {
+        return (getFirstName() != null ? getFirstName() + " ": "")  + getLastName();
+    }
+
     @LastName
     @Column(length = LastName.MAX_LEN, nullable = false)
     @Getter @Setter @ToString.Include
