@@ -15,7 +15,9 @@ import org.apache.isis.applib.annotation.PropertyLayout;
 @Property(
         editing = Editing.ENABLED,
         maxLength = EmailAddress.MAX_LEN,
-        optionality = Optionality.OPTIONAL
+        optionality = Optionality.OPTIONAL,
+        regexPattern = "[^@]+@[^@]+[.][^@]+",  // should really use https://emailregex.com/
+        regexPatternReplacement = "Invalid email address"
 )
 @PropertyLayout(named = "E-mail")
 @Parameter(maxLength = EmailAddress.MAX_LEN, optionality = Optionality.OPTIONAL)
