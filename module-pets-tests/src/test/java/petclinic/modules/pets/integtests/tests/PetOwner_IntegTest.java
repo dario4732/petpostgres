@@ -9,6 +9,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.apache.isis.applib.services.wrapper.DisabledException;
+import org.apache.isis.applib.services.wrapper.HiddenException;
 import org.apache.isis.applib.services.wrapper.InvalidException;
 
 import petclinic.modules.pets.dom.petowner.PetOwner;
@@ -33,23 +34,39 @@ public class PetOwner_IntegTest extends PetsModuleIntegTestAbstract {
         @Test
         public void accessible() {
             // when
-            final String name = wrap(petOwner).getLastName();
+            final String name = wrap(petOwner).getName();
 
             // then
             assertThat(name).isEqualTo(petOwner.getLastName());
         }
+    }
+
+    @Nested
+    public static class lastName extends PetOwner_IntegTest {
 
         @Test
-        public void not_editable() {
-
+        public void not_accessible() {
             // expect
-            assertThrows(DisabledException.class, ()->{
+            assertThrows(HiddenException.class, ()->{
 
                 // when
-                wrap(petOwner).setLastName("new name");
+                wrap(petOwner).getLastName();
             });
         }
+    }
 
+    @Nested
+    public static class firstName extends PetOwner_IntegTest {
+
+        @Test
+        public void not_accessible() {
+            // expect
+            assertThrows(HiddenException.class, ()->{
+
+                // when
+                wrap(petOwner).getFirstName();
+            });
+        }
     }
 
     @Nested
@@ -60,11 +77,12 @@ public class PetOwner_IntegTest extends PetsModuleIntegTestAbstract {
         public void can_be_updated_directly() {
 
             // when
-            wrap(petOwner).updateName("new name", null);
+            wrap(petOwner).updateName("McAdam", "Adam");
             transactionService.flushTransaction();
 
             // then
-            assertThat(wrap(petOwner).getLastName()).isEqualTo("new name");
+            assertThat(petOwner.getLastName()).isEqualTo("McAdam");
+            assertThat(petOwner.getFirstName()).isEqualTo("Adam");
         }
 
         @Test
