@@ -21,7 +21,6 @@ import org.apache.isis.applib.annotation.Action;
 import org.apache.isis.applib.annotation.ActionLayout;
 import org.apache.isis.applib.annotation.DomainObject;
 import org.apache.isis.applib.annotation.DomainObjectLayout;
-import org.apache.isis.applib.annotation.PromptStyle;
 import org.apache.isis.applib.annotation.Property;
 import org.apache.isis.applib.annotation.PropertyLayout;
 import org.apache.isis.applib.annotation.Publishing;
@@ -42,9 +41,11 @@ import lombok.Setter;
 import lombok.ToString;
 import lombok.val;
 
+import petclinic.modules.pets.types.EmailAddress;
 import petclinic.modules.pets.types.FirstName;
 import petclinic.modules.pets.types.LastName;
 import petclinic.modules.pets.types.Notes;
+import petclinic.modules.pets.types.PhoneNumber;
 
 
 @Entity
@@ -120,6 +121,18 @@ public class PetOwner implements Comparable<PetOwner> {
     @Getter @Setter @ToString.Include
     @Property(hidden = Where.EVERYWHERE)
     private String firstName;
+
+    @PhoneNumber
+    @Column(length = PhoneNumber.MAX_LEN, nullable = true)
+    @PropertyLayout(fieldSetId = "name", sequence = "1.5")
+    @Getter @Setter
+    private String phoneNumber;
+
+    @EmailAddress
+    @Column(length = EmailAddress.MAX_LEN, nullable = true)
+    @PropertyLayout(fieldSetId = "name", sequence = "1.6")
+    @Getter @Setter
+    private String emailAddress;
 
     @Notes
     @Column(length = Notes.MAX_LEN, nullable = true)
