@@ -25,6 +25,7 @@ import org.apache.isis.applib.annotation.PromptStyle;
 import org.apache.isis.applib.annotation.Property;
 import org.apache.isis.applib.annotation.PropertyLayout;
 import org.apache.isis.applib.annotation.Publishing;
+import org.apache.isis.applib.annotation.Where;
 import org.apache.isis.applib.jaxb.PersistentEntityAdapter;
 import org.apache.isis.applib.services.message.MessageService;
 import org.apache.isis.applib.services.repository.RepositoryService;
@@ -111,13 +112,13 @@ public class PetOwner implements Comparable<PetOwner> {
     @LastName
     @Column(length = LastName.MAX_LEN, nullable = false)
     @Getter @Setter @ToString.Include
-    @PropertyLayout(fieldSetId = "name", sequence = "1")
+    @Property(hidden = Where.EVERYWHERE)
     private String lastName;
 
     @FirstName
     @Column(length = FirstName.MAX_LEN, nullable = true)
     @Getter @Setter @ToString.Include
-    @PropertyLayout(fieldSetId = "name", sequence = "2")
+    @Property(hidden = Where.EVERYWHERE)
     private String firstName;
 
     @Notes
