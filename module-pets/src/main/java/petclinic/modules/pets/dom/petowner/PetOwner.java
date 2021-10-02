@@ -157,14 +157,6 @@ public class PetOwner implements Comparable<PetOwner> {
     public String default1UpdateName() {
         return getFirstName();
     }
-    public String validate0UpdateName(String newName) {
-        for (char prohibitedCharacter : "&%$!".toCharArray()) {
-            if( newName.contains(""+prohibitedCharacter)) {
-                return "Character '" + prohibitedCharacter + "' is not allowed.";
-            }
-        }
-        return null;
-    }
 
 
     @Action(semantics = NON_IDEMPOTENT_ARE_YOU_SURE)
