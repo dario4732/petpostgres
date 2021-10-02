@@ -38,7 +38,6 @@ public class PetOwners {
 
 
     @Action(semantics = SemanticsOf.NON_IDEMPOTENT)
-    @ActionLayout(/*promptStyle = PromptStyle.DIALOG_MODAL*/)
     public PetOwner create(
             @LastName final String lastName,
             @FirstName final String firstName) {
@@ -47,7 +46,6 @@ public class PetOwners {
 
 
     @Action(semantics = SemanticsOf.NON_IDEMPOTENT)
-    @ActionLayout(promptStyle = PromptStyle.DIALOG_SIDEBAR)
     public List<PetOwner> findByLastNameLike(
             @LastName final String lastName) {
         return repositoryService.allMatches(
@@ -57,7 +55,7 @@ public class PetOwners {
 
 
     @Action(semantics = SemanticsOf.SAFE)
-    @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT, promptStyle = PromptStyle.DIALOG_SIDEBAR)
+    @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT)
     public List<PetOwner> findByLastName(
             @LastName final String lastName
             ) {
