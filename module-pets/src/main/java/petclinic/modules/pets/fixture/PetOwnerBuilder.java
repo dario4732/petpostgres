@@ -4,12 +4,12 @@ import javax.inject.Inject;
 
 import org.apache.isis.testing.fixtures.applib.personas.BuilderScriptWithResult;
 
-import petclinic.modules.pets.dom.petowner.PetOwner;
-import petclinic.modules.pets.dom.petowner.PetOwners;
-
 import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.Accessors;
+
+import petclinic.modules.pets.dom.petowner.PetOwner;
+import petclinic.modules.pets.dom.petowner.PetOwners;
 
 @Accessors(chain = true)
 public class PetOwnerBuilder extends BuilderScriptWithResult<PetOwner> {
@@ -22,11 +22,12 @@ public class PetOwnerBuilder extends BuilderScriptWithResult<PetOwner> {
 
         checkParam("name", ec, String.class);
 
-        return wrap(petOwners).create(name, null);
+        PetOwner petOwner = petOwners.findByLastNameExact(name);
+        if(petOwner == null) {
+            petOwner = wrap(petOwners).create(name, null);
+        }
+        return this.object = petOwner;
     }
 
-    // -- DEPENDENCIES
-
     @Inject PetOwners petOwners;
-
 }
