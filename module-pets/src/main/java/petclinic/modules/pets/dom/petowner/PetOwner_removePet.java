@@ -32,6 +32,9 @@ public class PetOwner_removePet {
                 .ifPresent(pet -> repositoryService.remove(pet));
         return petOwner;
     }
+    public String disableAct() {
+        return petRepository.findByPetOwner(petOwner).isEmpty() ? "No pets" : null;
+    }
     public List<String> choices0Act() {
         return petRepository.findByPetOwner(petOwner)
                 .stream()
