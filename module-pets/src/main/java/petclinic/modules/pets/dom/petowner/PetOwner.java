@@ -51,8 +51,9 @@ import petclinic.modules.pets.types.PhoneNumber;
 @Entity
 @Table(
     schema="pets",
+    name = "PetOwner",
     uniqueConstraints = {
-        @UniqueConstraint(name = "PetOwner__lastName__UNQ", columnNames = {"LASTNAME"})
+        @UniqueConstraint(name = "PetOwner__lastName__UNQ", columnNames = {"lastName"})
     }
 )
 @NamedQueries({
@@ -113,31 +114,31 @@ public class PetOwner implements Comparable<PetOwner> {
     }
 
     @LastName
-    @Column(length = LastName.MAX_LEN, nullable = false)
+    @Column(name = "lastName", length = LastName.MAX_LEN, nullable = false)
     @Getter @Setter @ToString.Include
     @Property(hidden = Where.EVERYWHERE)
     private String lastName;
 
     @FirstName
-    @Column(length = FirstName.MAX_LEN, nullable = true)
+    @Column(name = "firstName", length = FirstName.MAX_LEN, nullable = true)
     @Getter @Setter @ToString.Include
     @Property(hidden = Where.EVERYWHERE)
     private String firstName;
 
     @PhoneNumber
-    @Column(length = PhoneNumber.MAX_LEN, nullable = true)
+    @Column(name = "phoneNumber", length = PhoneNumber.MAX_LEN, nullable = true)
     @PropertyLayout(fieldSetId = "contactDetails", sequence = "1")
     @Getter @Setter
     private String phoneNumber;
 
     @EmailAddress
-    @Column(length = EmailAddress.MAX_LEN, nullable = true)
+    @Column(name = "emailAddress", length = EmailAddress.MAX_LEN, nullable = true)
     @PropertyLayout(fieldSetId = "contactDetails", sequence = "2")
     @Getter @Setter
     private String emailAddress;
 
     @Notes
-    @Column(length = Notes.MAX_LEN, nullable = true)
+    @Column(name = "notes", length = Notes.MAX_LEN, nullable = true)
     @Getter @Setter
     @Property(commandPublishing = Publishing.ENABLED, executionPublishing = Publishing.ENABLED)
     @PropertyLayout(fieldSetId = "notes", sequence = "1")
