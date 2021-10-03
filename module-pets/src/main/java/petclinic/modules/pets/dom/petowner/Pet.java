@@ -20,6 +20,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 import org.apache.isis.applib.annotation.DomainObject;
 import org.apache.isis.applib.annotation.DomainObjectLayout;
+import org.apache.isis.applib.annotation.Property;
 import org.apache.isis.applib.annotation.PropertyLayout;
 import org.apache.isis.applib.annotation.Publishing;
 import org.apache.isis.applib.jaxb.PersistentEntityAdapter;
@@ -32,6 +33,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 import petclinic.modules.pets.types.FirstName;
+import petclinic.modules.pets.types.Notes;
 import petclinic.modules.pets.types.PetName;
 
 
@@ -64,9 +66,10 @@ public class Pet implements Comparable<Pet> {
     private long version;
 
 
-    Pet(PetOwner petOwner, String name) {
+    Pet(PetOwner petOwner, String name, PetSpecies petSpecies) {
         this.petOwner = petOwner;
         this.name = name;
+        this.petSpecies = petSpecies;
     }
 
 
@@ -87,6 +90,13 @@ public class Pet implements Comparable<Pet> {
     @Getter @Setter
     @PropertyLayout(fieldSetId = "details", sequence = "1")
     private PetSpecies petSpecies;
+
+    @Notes
+    @Column(name = "notes", length = Notes.MAX_LEN, nullable = true)
+    @Getter @Setter
+    @Property(commandPublishing = Publishing.ENABLED, executionPublishing = Publishing.ENABLED)
+    @PropertyLayout(fieldSetId = "notes", sequence = "1")
+    private String notes;
 
 
     private final static Comparator<Pet> comparator =
