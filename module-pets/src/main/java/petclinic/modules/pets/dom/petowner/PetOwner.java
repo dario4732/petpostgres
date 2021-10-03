@@ -76,6 +76,8 @@ public class PetOwner implements Comparable<PetOwner> {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)
+    @Getter @Setter
+    @PropertyLayout(fieldSetId = "metadata", sequence = "1")
     private Long id;
 
     @Version
