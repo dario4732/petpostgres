@@ -40,6 +40,7 @@ import petclinic.modules.pets.types.PetName;
 @Entity
 @Table(
     schema="pets",
+    name = "Pet",
     uniqueConstraints = {
         @UniqueConstraint(name = "Pet__owner_name__UNQ", columnNames = {"owner_id", "name"})
     }
