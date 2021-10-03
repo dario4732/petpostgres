@@ -6,7 +6,8 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
-import javax.persistence.FetchType;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -80,6 +81,12 @@ public class Pet implements Comparable<Pet> {
     @Getter @Setter
     @PropertyLayout(fieldSetId = "name", sequence = "2")
     private String name;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "petSpecies", nullable = false)
+    @Getter @Setter
+    @PropertyLayout(fieldSetId = "details", sequence = "1")
+    private PetSpecies petSpecies;
 
 
     private final static Comparator<Pet> comparator =
