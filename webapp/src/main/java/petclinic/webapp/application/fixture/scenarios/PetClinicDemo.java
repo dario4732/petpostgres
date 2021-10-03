@@ -6,12 +6,14 @@ import org.apache.isis.testing.fixtures.applib.fixturescripts.FixtureScript;
 import org.apache.isis.testing.fixtures.applib.modules.ModuleWithFixturesService;
 
 import petclinic.modules.pets.fixture.PetOwner_persona;
+import petclinic.modules.pets.fixture.Pet_persona;
 
 public class PetClinicDemo extends FixtureScript {
 
     @Override
     protected void execute(final ExecutionContext ec) {
         ec.executeChildren(this, moduleWithFixturesService.getTeardownFixture());
+        ec.executeChild(this, new Pet_persona.PersistAll());
         ec.executeChild(this, new PetOwner_persona.PersistAll());
     }
 
