@@ -32,6 +32,12 @@ public class PetOwner_removePet {
                 .ifPresent(pet -> repositoryService.remove(pet));
         return petOwner;
     }
+    public List<String> choices0Act() {
+        return petRepository.findByPetOwner(petOwner)
+                .stream()
+                .map(Pet::getName)
+                .collect(Collectors.toList());
+    }
 
     @Inject PetRepository petRepository;
     @Inject RepositoryService repositoryService;
