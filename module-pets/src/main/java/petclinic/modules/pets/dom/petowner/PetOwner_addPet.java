@@ -35,6 +35,9 @@ public class PetOwner_addPet {
                 ? String.format("Pet with name '%s' already defined for this owner", name)
                 : null;
     }
+    public PetSpecies default1Act() {
+        return PetSpecies.Dog;
+    }
 
     @Inject PetRepository petRepository;
     @Inject RepositoryService repositoryService;
