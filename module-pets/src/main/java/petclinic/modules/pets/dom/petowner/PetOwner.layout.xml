@@ -35,7 +35,14 @@
             <c:fieldSet id="notes" name="Notes"/>
         </bs3:col>
         <bs3:col span="6">
-            <bs3:tabGroup  unreferencedCollections="true">
+            <bs3:tabGroup  unreferencedCollections="true" collapseIfOne="false">
+                <bs3:tab name="Pets">                   <!--.-->
+                    <bs3:row>
+                        <bs3:col span="12">
+                            <c:collection id="pets"/>
+                        </bs3:col>
+                    </bs3:row>
+                </bs3:tab>
             </bs3:tabGroup>
         </bs3:col>
     </bs3:row>
