@@ -41,6 +41,10 @@ public class PetOwner_removePet {
                 .map(Pet::getName)
                 .collect(Collectors.toList());
     }
+    public String default0Act() {
+        List<String> names = choices0Act();
+        return names.size() == 1 ? names.get(0) : null;
+    }
 
     @Inject PetRepository petRepository;
     @Inject RepositoryService repositoryService;
