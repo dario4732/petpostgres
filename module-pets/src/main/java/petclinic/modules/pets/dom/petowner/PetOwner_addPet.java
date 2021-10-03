@@ -30,6 +30,12 @@ public class PetOwner_addPet {
         repositoryService.persist(new Pet(petOwner, name, petSpecies));
         return petOwner;
     }
+    public String validate0Act(final String name) {
+        return petRepository.findByPetOwnerAndName(petOwner, name).isPresent()
+                ? String.format("Pet with name '%s' already defined for this owner", name)
+                : null;
+    }
 
+    @Inject PetRepository petRepository;
     @Inject RepositoryService repositoryService;
 }
