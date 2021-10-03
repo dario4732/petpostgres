@@ -17,7 +17,7 @@ import petclinic.modules.pets.types.PetName;
         commandPublishing = Publishing.ENABLED,
         executionPublishing = Publishing.ENABLED
 )
-@ActionLayout(associateWith = "pets")
+@ActionLayout(associateWith = "pets", sequence = "1")
 @RequiredArgsConstructor
 public class PetOwner_addPet {
 
