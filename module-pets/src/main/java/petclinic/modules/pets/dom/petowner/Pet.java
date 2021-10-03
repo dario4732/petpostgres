@@ -78,6 +78,10 @@ public class Pet implements Comparable<Pet> {
         return getName() + " " + getPetOwner().getLastName();
     }
 
+    public String iconName() {
+        return getPetSpecies().name().toLowerCase();
+    }
+
     @ManyToOne(optional = false)
     @JoinColumn(name = "owner_id")
     @PropertyLayout(fieldSetId = "name", sequence = "1")
