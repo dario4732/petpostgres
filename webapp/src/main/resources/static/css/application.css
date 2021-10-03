@@ -1,0 +1,7 @@
+td.title-column > div > div > div {
+    text-align: left;
+}
+.collectionContentsAsAjaxTablePanel table.contents thead th.title-column,
+.collectionContentsAsAjaxTablePanel table.contents tbody td.title-column {
+    width: 10%;
+}
