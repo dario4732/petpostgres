@@ -10,7 +10,7 @@ import lombok.experimental.Accessors;
 
 import petclinic.modules.pets.dom.pet.Pet;
 import petclinic.modules.pets.dom.petowner.PetOwner;
-import petclinic.modules.pets.dom.petowner.PetOwner_addPet;
+import petclinic.modules.pets.dom.pet.PetOwner_addPet;
 import petclinic.modules.pets.dom.pet.PetRepository;
 import petclinic.modules.pets.dom.pet.PetSpecies;
 import petclinic.modules.pets.fixture.petowner.PetOwner_persona;

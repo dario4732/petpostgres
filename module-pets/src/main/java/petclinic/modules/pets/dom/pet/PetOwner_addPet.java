@@ -1,4 +1,4 @@
-package petclinic.modules.pets.dom.petowner;
+package petclinic.modules.pets.dom.pet;
 
 import javax.inject.Inject;
 
@@ -13,6 +13,7 @@ import lombok.RequiredArgsConstructor;
 import petclinic.modules.pets.dom.pet.Pet;
 import petclinic.modules.pets.dom.pet.PetRepository;
 import petclinic.modules.pets.dom.pet.PetSpecies;
+import petclinic.modules.pets.dom.petowner.PetOwner;
 import petclinic.modules.pets.types.PetName;
 
 @Action(
