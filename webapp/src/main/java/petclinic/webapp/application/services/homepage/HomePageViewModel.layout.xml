@@ -5,6 +5,7 @@
             <bs3:row>
                 <bs3:col span="12" unreferencedActions="true">
                     <domainObject/>
+                    <action id="bookVisit"/>
                     <action id="clearHints" hidden="EVERYWHERE"/>
                     <action id="impersonate" hidden="EVERYWHERE"/>
                     <action id="impersonateWithRoles" hidden="EVERYWHERE"/>
