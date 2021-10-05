@@ -48,24 +48,4 @@ class PetOwner_Test {
         }
 
     }
-    @Nested
-    class delete {
-
-        @Test
-        void happy_case() throws Exception {
-
-            // given
-            assertThat(object).isNotNull();
-
-            // expecting
-            when(mockTitleService.titleOf(object)).thenReturn("Foo");
-
-            // when
-            object.delete();
-
-            // then
-            verify(mockMessageService).informUser("'Foo' deleted");
-            verify(mockRepositoryService).removeAndFlush(object);
-        }
-    }
 }

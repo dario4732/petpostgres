@@ -14,6 +14,7 @@ import org.apache.isis.applib.services.xactn.TransactionService;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import petclinic.modules.pets.dom.petowner.PetOwner;
+import petclinic.modules.pets.dom.petowner.PetOwner_delete;
 import petclinic.webapp.integtests.WebAppIntegTestAbstract;
 import petclinic.modules.pets.dom.petowner.PetOwners;
 
@@ -80,7 +81,7 @@ class Smoke_IntegTest extends WebAppIntegTestAbstract {
 
 
         // when
-        wrap(fred).delete();
+        wrapMixin(PetOwner_delete.class, fred).act();
         transactionService.flushTransaction();
 
         // then
