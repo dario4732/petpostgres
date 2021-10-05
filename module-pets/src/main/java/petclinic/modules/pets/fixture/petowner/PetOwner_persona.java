@@ -1,4 +1,4 @@
-package petclinic.modules.pets.fixture;
+package petclinic.modules.pets.fixture.petowner;
 
 import org.apache.isis.applib.services.registry.ServiceRegistry;
 import org.apache.isis.testing.fixtures.applib.personas.PersonaWithBuilderScript;

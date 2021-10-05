@@ -1,4 +1,4 @@
-package petclinic.modules.pets.fixture;
+package petclinic.modules.pets.fixture.pet;
 
 import javax.inject.Inject;
 
@@ -13,6 +13,7 @@ import petclinic.modules.pets.dom.petowner.PetOwner;
 import petclinic.modules.pets.dom.petowner.PetOwner_addPet;
 import petclinic.modules.pets.dom.pet.PetRepository;
 import petclinic.modules.pets.dom.pet.PetSpecies;
+import petclinic.modules.pets.fixture.petowner.PetOwner_persona;
 
 @Accessors(chain = true)
 public class PetBuilder extends BuilderScriptWithResult<Pet> {

@@ -17,7 +17,7 @@ import org.apache.isis.testing.unittestsupport.applib.matchers.ThrowableMatchers
 
 import petclinic.modules.pets.dom.petowner.PetOwner;
 import petclinic.modules.pets.dom.petowner.PetOwners;
-import petclinic.modules.pets.fixture.PetOwner_persona;
+import petclinic.modules.pets.fixture.petowner.PetOwner_persona;
 import petclinic.modules.pets.integtests.PetsModuleIntegTestAbstract;
 
 @Transactional

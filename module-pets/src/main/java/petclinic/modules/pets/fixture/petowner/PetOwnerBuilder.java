@@ -1,4 +1,4 @@
-package petclinic.modules.pets.fixture;
+package petclinic.modules.pets.fixture.petowner;
 
 import javax.inject.Inject;
 

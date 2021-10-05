@@ -1,4 +1,4 @@
-package petclinic.modules.pets.fixture;
+package petclinic.modules.pets.fixture.pet;
 
 import org.apache.isis.applib.services.registry.ServiceRegistry;
 import org.apache.isis.testing.fixtures.applib.personas.PersonaWithBuilderScript;
@@ -12,6 +12,7 @@ import petclinic.modules.pets.dom.pet.Pet;
 import petclinic.modules.pets.dom.petowner.PetOwner;
 import petclinic.modules.pets.dom.pet.PetRepository;
 import petclinic.modules.pets.dom.pet.PetSpecies;
+import petclinic.modules.pets.fixture.petowner.PetOwner_persona;
 
 @AllArgsConstructor
 public enum Pet_persona
