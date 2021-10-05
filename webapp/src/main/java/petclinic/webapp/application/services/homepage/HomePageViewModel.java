@@ -9,24 +9,36 @@ import org.apache.isis.applib.annotation.DomainObjectLayout;
 import org.apache.isis.applib.annotation.HomePage;
 import org.apache.isis.applib.annotation.Nature;
 
+import petclinic.modules.pets.dom.pet.Pet;
+import petclinic.modules.pets.dom.pet.PetRepository;
 import petclinic.modules.pets.dom.petowner.PetOwner;
-import petclinic.modules.pets.dom.petowner.PetOwners;
+import petclinic.modules.pets.dom.petowner.PetOwnerRepository;
+import petclinic.modules.visits.dom.visit.Visit;
+import petclinic.modules.visits.dom.visit.VisitRepository;
 
 @DomainObject(
         nature = Nature.VIEW_MODEL,
-        logicalTypeName = "simple.HomePageViewModel"
+        logicalTypeName = "petclinic.HomePageViewModel"
         )
 @HomePage
 @DomainObjectLayout()
 public class HomePageViewModel {
 
     public String title() {
-        return getObjects().size() + " objects";
+        return getPetOwners().size() + " owners";
     }
 
-    public List<PetOwner> getObjects() {
-        return petOwners.listAll();
+    public List<PetOwner> getPetOwners() {
+        return petOwnerRepository.findAll();
+    }
+    public List<Pet> getPets() {
+        return petRepository.findAll();
+    }
+    public List<Visit> getVisits() {
+        return visitRepository.findAll();
     }
 
-    @Inject PetOwners petOwners;
+    @Inject PetOwnerRepository petOwnerRepository;
+    @Inject PetRepository petRepository;
+    @Inject VisitRepository visitRepository;
 }
