@@ -44,6 +44,11 @@
             </dependency>
             <dependency>
                 <groupId>${project.groupId}</groupId>
+                <artifactId>petclinic-module-visits</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
                 <artifactId>petclinic-webapp</artifactId>
                 <version>${project.version}</version>
             </dependency>
@@ -69,6 +74,7 @@
     <modules>
         <module>module-pets</module>
         <module>module-pets-tests</module>
+        <module>module-visits</module>
         <module>webapp</module>
         <module>webapp-tests</module>
     </modules>
