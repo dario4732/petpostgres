@@ -1,6 +1,7 @@
 package petclinic.webapp.application.services.homepage;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import javax.inject.Inject;
 
@@ -13,7 +14,6 @@ import petclinic.modules.pets.dom.pet.Pet;
 import petclinic.modules.pets.dom.pet.PetRepository;
 import petclinic.modules.pets.dom.petowner.PetOwner;
 import petclinic.modules.pets.dom.petowner.PetOwnerRepository;
-import petclinic.modules.visits.dom.visit.Visit;
 import petclinic.modules.visits.dom.visit.VisitRepository;
 
 @DomainObject(
@@ -34,8 +34,11 @@ public class HomePageViewModel {
     public List<Pet> getPets() {
         return petRepository.findAll();
     }
-    public List<Visit> getVisits() {
-        return visitRepository.findAll();
+    public List<VisitPlusPetOwner> getVisits() {
+        return visitRepository.findAll()
+                .stream()
+                .map(VisitPlusPetOwner::new)
+                .collect(Collectors.toList());
     }
 
     @Inject PetOwnerRepository petOwnerRepository;
