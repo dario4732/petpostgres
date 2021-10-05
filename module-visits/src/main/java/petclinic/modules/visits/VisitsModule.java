@@ -11,6 +11,7 @@ import org.apache.isis.testing.fixtures.applib.modules.ModuleWithFixtures;
 
 import petclinic.modules.pets.PetsModule;
 import petclinic.modules.pets.dom.petowner.PetOwner;
+import petclinic.modules.visits.dom.visit.Visit;
 
 @Configuration
 @ComponentScan
@@ -24,7 +25,7 @@ public class VisitsModule implements ModuleWithFixtures {
         return new FixtureScript() {
             @Override
             protected void execute(ExecutionContext executionContext) {
-                // nothing to do
+                repositoryService.removeAll(Visit.class);
             }
         };
     }
