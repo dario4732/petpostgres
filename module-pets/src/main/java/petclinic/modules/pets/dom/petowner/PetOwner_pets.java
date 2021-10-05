@@ -9,6 +9,9 @@ import org.apache.isis.applib.annotation.CollectionLayout;
 
 import lombok.RequiredArgsConstructor;
 
+import petclinic.modules.pets.dom.pet.Pet;
+import petclinic.modules.pets.dom.pet.PetRepository;
+
 @Collection
 @CollectionLayout(defaultView = "table")
 @RequiredArgsConstructor

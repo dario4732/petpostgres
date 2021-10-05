@@ -1,7 +1,6 @@
 package petclinic.modules.pets.dom.petowner;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 import javax.inject.Inject;
@@ -14,6 +13,8 @@ import org.apache.isis.applib.services.repository.RepositoryService;
 
 import lombok.RequiredArgsConstructor;
 
+import petclinic.modules.pets.dom.pet.Pet;
+import petclinic.modules.pets.dom.pet.PetRepository;
 import petclinic.modules.pets.types.PetName;
 
 @Action(

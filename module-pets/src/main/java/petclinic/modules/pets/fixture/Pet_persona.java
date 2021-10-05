@@ -8,10 +8,10 @@ import org.apache.isis.testing.fixtures.applib.setup.PersonaEnumPersistAll;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
-import petclinic.modules.pets.dom.petowner.Pet;
+import petclinic.modules.pets.dom.pet.Pet;
 import petclinic.modules.pets.dom.petowner.PetOwner;
-import petclinic.modules.pets.dom.petowner.PetRepository;
-import petclinic.modules.pets.dom.petowner.PetSpecies;
+import petclinic.modules.pets.dom.pet.PetRepository;
+import petclinic.modules.pets.dom.pet.PetSpecies;
 
 @AllArgsConstructor
 public enum Pet_persona

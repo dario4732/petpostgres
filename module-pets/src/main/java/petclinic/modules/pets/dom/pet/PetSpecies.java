@@ -1,4 +1,4 @@
-package petclinic.modules.pets.dom.petowner;
+package petclinic.modules.pets.dom.pet;
 
 public enum PetSpecies {
     Dog,

@@ -8,11 +8,11 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.Accessors;
 
-import petclinic.modules.pets.dom.petowner.Pet;
+import petclinic.modules.pets.dom.pet.Pet;
 import petclinic.modules.pets.dom.petowner.PetOwner;
 import petclinic.modules.pets.dom.petowner.PetOwner_addPet;
-import petclinic.modules.pets.dom.petowner.PetRepository;
-import petclinic.modules.pets.dom.petowner.PetSpecies;
+import petclinic.modules.pets.dom.pet.PetRepository;
+import petclinic.modules.pets.dom.pet.PetSpecies;
 
 @Accessors(chain = true)
 public class PetBuilder extends BuilderScriptWithResult<Pet> {

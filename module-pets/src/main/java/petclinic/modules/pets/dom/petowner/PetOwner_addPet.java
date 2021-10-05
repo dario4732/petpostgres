@@ -10,6 +10,9 @@ import org.apache.isis.applib.services.repository.RepositoryService;
 
 import lombok.RequiredArgsConstructor;
 
+import petclinic.modules.pets.dom.pet.Pet;
+import petclinic.modules.pets.dom.pet.PetRepository;
+import petclinic.modules.pets.dom.pet.PetSpecies;
 import petclinic.modules.pets.types.PetName;
 
 @Action(

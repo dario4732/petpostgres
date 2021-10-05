@@ -1,8 +1,7 @@
-package petclinic.modules.pets.dom.petowner;
+package petclinic.modules.pets.dom.pet;
 
 import java.util.Comparator;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
@@ -32,6 +31,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
+import petclinic.modules.pets.dom.petowner.PetOwner;
 import petclinic.modules.pets.types.FirstName;
 import petclinic.modules.pets.types.Notes;
 import petclinic.modules.pets.types.PetName;
