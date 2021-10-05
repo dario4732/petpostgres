@@ -58,7 +58,7 @@
 
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>petclinic-module-pets</artifactId>
+            <artifactId>petclinic-module-visits</artifactId>
         </dependency>
 
         <!-- isis -->
