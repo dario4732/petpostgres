@@ -8,6 +8,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.apache.isis.testing.fixtures.applib.fixturescripts.FixtureScript;
 import org.apache.isis.testing.fixtures.applib.modules.ModuleWithFixtures;
 
+import petclinic.modules.pets.dom.pet.Pet;
 import petclinic.modules.pets.dom.petowner.PetOwner;
 
 @Configuration
@@ -21,6 +22,7 @@ public class PetsModule implements ModuleWithFixtures {
         return new FixtureScript() {
             @Override
             protected void execute(ExecutionContext executionContext) {
+                repositoryService.removeAll(Pet.class);
                 repositoryService.removeAll(PetOwner.class);
             }
         };
