@@ -42,6 +42,7 @@ import petclinic.modules.pets.dom.petowner.PetOwner;
 import petclinic.modules.pets.types.FirstName;
 import petclinic.modules.pets.types.Notes;
 import petclinic.modules.pets.types.PetName;
+import petclinic.modules.visits.types.Reason;
 
 
 @Entity
@@ -74,9 +75,10 @@ public class Visit implements Comparable<Visit> {
     private long version;
 
 
-    Visit(Pet pet, LocalDateTime visitAt) {
+    public Visit(Pet pet, LocalDateTime visitAt, String reason) {
         this.pet = pet;
         this.visitAt = visitAt;
+        this.reason = reason;
     }
 
 
@@ -95,6 +97,11 @@ public class Visit implements Comparable<Visit> {
     @PropertyLayout(fieldSetId = "name", sequence = "2")
     private LocalDateTime visitAt;
 
+    @Reason
+    @Column(name = "reason", length = FirstName.MAX_LEN, nullable = false)
+    @Getter @Setter
+    @PropertyLayout(fieldSetId = "details", sequence = "1")
+    private String reason;
 
     private final static Comparator<Visit> comparator =
             Comparator.comparing(Visit::getPet).thenComparing(Visit::getVisitAt);
