@@ -75,6 +75,25 @@ public class Pet_bookVisit_IntegTest extends VisitsModuleIntegTestAbstract {
         .hasMessage("'Reason' is mandatory");
     }
 
+    @Test
+    public void cannot_book_in_the_past() {
+
+        // given
+        Pet somePet = fakeDataService.enums().anyOf(Pet_persona.class)
+                .findUsing(serviceRegistry);
+        List<Visit> before = visitRepository.findByPetOrderByVisitAtDesc(somePet);
+
+        // when, then
+        LocalDateTime visitAt = clockService.getClock().nowAsLocalDateTime();
+        String reason = fakeDataService.strings().upper(40);
+
+        assertThatThrownBy(() ->
+                wrapMixin(Pet_bookVisit.class, somePet).act(visitAt, reason)
+        )
+                .isInstanceOf(InvalidException.class)
+                .hasMessage("Must be in the future");
+    }
+
     @Inject FakeDataService fakeDataService;
     @Inject VisitRepository visitRepository;
     @Inject ClockService clockService;
