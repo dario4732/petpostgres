@@ -9,8 +9,11 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 import org.apache.isis.applib.services.clock.ClockService;
+import org.apache.isis.applib.services.wrapper.DisabledException;
+import org.apache.isis.applib.services.wrapper.InvalidException;
 import org.apache.isis.testing.fakedata.applib.services.FakeDataService;
 
 import petclinic.modules.pets.dom.pet.Pet;
@@ -51,6 +54,25 @@ public class Pet_bookVisit_IntegTest extends VisitsModuleIntegTestAbstract {
         assertThat(visit.getPet()).isSameAs(somePet);
         assertThat(visit.getVisitAt()).isEqualTo(visitAt);
         assertThat(visit.getReason()).isEqualTo(reason);
+    }
+
+    @Test
+    public void reason_is_required() {
+
+        // given
+        Pet somePet = fakeDataService.enums().anyOf(Pet_persona.class)
+                        .findUsing(serviceRegistry);
+        List<Visit> before = visitRepository.findByPetOrderByVisitAtDesc(somePet);
+
+        // when, then
+        LocalDateTime visitAt = clockService.getClock().nowAsLocalDateTime()
+                                    .plusDays(fakeDataService.ints().between(1, 3));
+
+        assertThatThrownBy(() ->
+            wrapMixin(Pet_bookVisit.class, somePet).act(visitAt, null)
+        )
+        .isInstanceOf(InvalidException.class)
+        .hasMessage("'Reason' is mandatory");
     }
 
     @Inject FakeDataService fakeDataService;
