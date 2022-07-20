@@ -1,0 +1,12 @@
+petclinic\webapp\quartz\job\SampleJob.class
+petclinic\webapp\AppManifest.class
+petclinic\webapp\custom\CustomModule.class
+petclinic\webapp\PetClinicApp.class
+petclinic\webapp\application\services\homepage\HomePageViewModel.class
+petclinic\webapp\application\services\homepage\HomePageViewModel_bookVisit.class
+petclinic\webapp\application\ApplicationModule.class
+petclinic\webapp\application\services\homepage\VisitPlusPetOwner.class
+petclinic\webapp\application\services\health\HealthCheckServiceImpl.class
+petclinic\webapp\custom\restapi\CustomController.class
+petclinic\webapp\application\fixture\scenarios\PetClinicDemo.class
+petclinic\webapp\quartz\QuartzModule.class

@@ -29,19 +29,19 @@
     <dependencyManagement>
         <dependencies>
 
+            <dependency>
+                <groupId>org.postgresql</groupId>
+                <artifactId>postgresql</artifactId>
+                <version>42.3.5</version>
+            </dependency>
+
             <!-- this project's own modules -->
             <dependency>
                 <groupId>${project.groupId}</groupId>
                 <artifactId>petclinic-module-pets</artifactId>
                 <version>${project.version}</version>
             </dependency>
-            <dependency>
-                <groupId>${project.groupId}</groupId>
-                <artifactId>petclinic-module-pets-tests</artifactId>
-                <version>${project.version}</version>
-                <scope>test</scope>
-                <type>test-jar</type>
-            </dependency>
+
             <dependency>
                 <groupId>${project.groupId}</groupId>
                 <artifactId>petclinic-module-visits</artifactId>
@@ -52,18 +52,18 @@
                 <artifactId>petclinic-webapp</artifactId>
                 <version>${project.version}</version>
             </dependency>
-            <dependency>
-                <groupId>${project.groupId}</groupId>
-                <artifactId>petclinic-webapp-tests</artifactId>
-                <version>${project.version}</version>
-                <scope>test</scope>
-                <type>test-jar</type>
-            </dependency>
+
 
         </dependencies>
     </dependencyManagement>
 
     <dependencies>
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.3.5</version>
+        </dependency>
+
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -73,10 +73,8 @@
 
     <modules>
         <module>module-pets</module>
-        <module>module-pets-tests</module>
         <module>module-visits</module>
         <module>webapp</module>
-        <module>webapp-tests</module>
     </modules>
 
     <profiles>
